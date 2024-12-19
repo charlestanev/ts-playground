@@ -81,3 +81,48 @@
 //         console.error(error.message);
 //     }
 // });
+
+
+
+// 2.	Opinion Poll
+// •	Create a Person class with two fields name and age.
+// •	Write a program that uses line of personal information in the following format "{name} {age}"
+// •	Print the data in the following format: "{name} is {age} years old."
+// Examples
+// Input	Output
+// Peter 12	Peter is 12 years old.
+// Sofia 33	Sofia is 33 years old.
+// interface IPoll {
+//     name: string,
+//     age: number
+// }
+
+class Person {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    getInfo(): string {
+        return `${this.name} is ${this.age} years old.`;
+    }
+}
+
+function processOpinionPoll(input: string[]): void {
+    input.forEach(data => {
+        const [name, ageStr] = data.split(' ');
+
+        const age = Number(ageStr);
+
+        const person = new Person(name, age);
+
+        console.log(person.getInfo());
+    })
+}
+
+const inputs = ['Peter 12', 'Sofia 33'];
+
+processOpinionPoll(inputs)
