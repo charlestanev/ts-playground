@@ -106,3 +106,46 @@
 // Hero: Poppy
 // level => 28
 // items => Sentinel, Antara
+
+interface Hero {
+    name: string;
+    level: number;
+    items: string[];
+}
+
+function registerHeroes(input: string[]): void {
+    const heroes: Hero[] = [];
+
+    input.forEach(x => {
+        const [name, level, items] = x.split(' / ');
+
+        heroes.push({
+            name,
+            level: Number(level),
+            items: items ? items.split(', ') : []
+        })
+    })
+
+    heroes.sort((a, b) => a.level - b.level);
+
+    heroes.forEach(hero => {
+        console.log(`Hero: ${hero.name}`);
+        console.log(`level => ${hero.level}`);
+        console.log(`items => ${hero.items.join(', ')}`);
+    })
+}
+
+const input1 = [
+    'Isacc / 25 / Apple, GravityGun',
+    'Derek / 12 / BarrelVest, DestructionSword',
+    'Hes / 1 / Desolator, Sentinel, Antara'
+];
+
+const input2 = [
+    'Batman / 2 / Banana, Gun',
+    'Superman / 18 / Sword',
+    'Poppy / 28 / Sentinel, Antara'
+];
+
+registerHeroes(input1);
+registerHeroes(input2);
