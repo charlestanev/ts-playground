@@ -290,3 +290,37 @@
 //     'Bruce Willis',
 //     'Tom Holland'
 // ]);
+
+
+
+
+
+// 10.	Aggregate Elements
+// Write a program that performs different operations on an array of elements. Implement the following operations:
+// •	Sum(ai) - calculates the sum of all elements from the input array
+// •	Sum(1/ai) - calculates the sum of the inverse values (1/ai) of all elements from the array
+// •	Concat(ai) - concatenates the string representations of all elements from the array
+// The input comes as an array of number elements.
+// The output should be printed on the console on a new line for each of the operations.
+// Examples
+// Input	Output		Input	Output
+// [1, 2, 3]	6
+// 1.8333333333333333
+// 123		[2, 4, 8, 16]	30
+// 0.9375
+// 24816
+
+function numberOperations(arr: number[]): void {
+    let sum = arr.reduce((i, num) => i + num, 0);
+
+    let inverseSum = arr.reduce((i, num) => i + (1 / num), 0);
+
+    let concatenated = arr.join('');
+
+    console.log(sum);
+    console.log(inverseSum);
+    console.log(concatenated);
+}
+
+numberOperations([1, 2, 3]);
+numberOperations([2, 4, 8, 16]);
