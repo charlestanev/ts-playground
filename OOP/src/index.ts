@@ -133,3 +133,146 @@
 // const person2 = createPersonFromInput(input2);
 // console.log(person2.getPersonInfo());
 
+
+
+
+
+// // 3.	Bank Account
+// // Create class BankAccount.
+// // The class should have private fields for:
+// // •	Id: int (Starts from 1 and increments for every new account)
+// // •	Balance: double
+// // •	Interest rate: double (Shared for all accounts. Default value: 0.02)
+// // The class should also have public methods for:
+// // •	setInterestRate
+// // •	getInterest
+// // •	deposit
+// // Create a test client supporting the following commands:
+// // •	Create
+// // •	Deposit {Id} {Amount}
+// // •	SetInterest {Interest}
+// // •	GetInterest {ID} {Years}
+// // •	End
+// // Examples
+// // Input	Output	Comments
+// // Create
+// // Deposit 1 20
+// // GetInterest 1 10
+// // End	Account ID1 created
+// // Deposited 20 to ID1
+// // 4.00
+// // Create
+// // Create
+// // Deposit 1 20
+// // Deposit 3 20
+// // Deposit 2 10
+// // SetInterest 1.5
+// // GetInterest 1 1
+// // GetInterest 2 1
+// // GetInterest 3 1
+// // End	Account ID1 created
+// // Account ID2 created
+// // Deposited 20 to ID1
+// // Account does not exist
+// // Deposited 10 to ID2
+// // 30.00
+// // 15.00
+// // Account does not exist	Sets the global interest rate to 1.
+// // Prints interest for a bank account with id 1 for 1 year period.
+
+// class BankAccount {
+//     private static nextId: number = 1;
+
+//     private static globalInterestRate: number = 0.02;
+
+//     private _id: number;
+//     private _balance: number;
+
+//     constructor() {
+//         this._id = BankAccount.nextId++;
+//         this._balance = 0;
+//     }
+
+//     public get id(): number {
+//         return this._id;
+//     }
+
+//     public deposit(amount: number): void {
+//         if (amount > 0) {
+//             this._balance += amount;
+//             console.log(`Deposited ${amount} to ID${this._id}`);
+//         } else {
+//             console.error("Deposit amount must be positive.");
+//         }
+//     }
+
+//     public getInterest(years: number): number {
+//         return this._balance * BankAccount.globalInterestRate * years;
+//     }
+
+//     public static setInterestRate(rate: number): void {
+//         if (rate >= 0) {
+//             BankAccount.globalInterestRate = rate;
+//         } else {
+//             console.error("Interest rate must be non-negative.");
+//         }
+//     }
+// }
+
+// const accounts: Map<number, BankAccount> = new Map();
+
+// function processCommand(command: string): void {
+//     const parts = command.split(' ');
+//     const action = parts[0];
+
+//     switch (action) {
+//         case 'Create':
+//             const newAccount = new BankAccount();
+//             accounts.set(newAccount.id, newAccount);
+//             console.log(`Account ID${newAccount.id} created`);
+//             break;
+
+//         case "Deposit":
+//             const depositId = parseInt(parts[1]);
+//             const amount = parseFloat(parts[2]);
+//             const account = accounts.get(depositId);
+//             if (account) {
+//                 account.deposit(amount);
+//             } else {
+//                 console.log("Account does not exist");
+//             }
+//             break;
+
+//         case "SetInterest":
+//             const newRate = parseFloat(parts[1]);
+//             BankAccount.setInterestRate(newRate);
+//             break;
+
+//         case "GetInterest":
+//             const interestId = parseInt(parts[1]);
+//             const years = parseInt(parts[2]);
+//             const interestAccount = accounts.get(interestId);
+//             if (interestAccount) {
+//                 console.log(interestAccount.getInterest(years).toFixed(2));
+//             } else {
+//                 console.log("Account does not exist");
+//             }
+//             break;
+
+//         case "End":
+//             console.log("Program terminated.");
+//             return;
+
+//         default:
+//             console.log("Invalid command");
+//     }
+// }
+
+// const testCommands = [
+//     "Create",
+//     "Deposit 1 20",
+//     "GetInterest 1 10",
+//     "End"
+// ];
+
+// testCommands.forEach(command => processCommand(command));
