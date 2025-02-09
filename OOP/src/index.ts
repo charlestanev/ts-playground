@@ -280,6 +280,44 @@
 
 
 
+// // 4.	Hierarchical Inheritance
+// // Create three classes named Animal, Dog, and Cat.
+// // •	Animal with a single public method eat() that prints: "eating…"
+// // •	Dog with a single public method bark() that prints: "barking…"
+// // •	Cat with a single public method meow() that prints: "meowing…"
+// // •	Dog and Cat should inherit from Animal.
+
+// class Animal {
+//     public eat(): void {
+//         console.log('eating ...');
+//     }
+// }
+
+// class Dog extends Animal {
+//     public bark(): void {
+//         console.log('barking ...');
+//     }
+// }
+
+// class Cat extends Animal {
+//     public meow(): void {
+//         console.log('meowing ...');
+//     }
+// }
+
+// const dog = new Dog();
+// const cat = new Cat();
+
+// dog.eat();
+// dog.bark();
+
+// cat.eat();
+// cat.meow();
+
+
+
+
+
 // // 5.	Company Roster
 // // Define a class Employee that holds the following information: name, salary, position, department, email, and age. The name, salary, position, and department are mandatory, while the rest are optional.
 // // Your task is to write a program that takes N lines of information about employees from the console and calculates the department with the highest average salary, and prints for each employee in that department his name, salary, email, and age - sorted by salary in descending order. If an employee doesn't have an email – in place of that field, you should print "n/a" instead, if he doesn't have an age – print "-1" instead. Print in the following format:
