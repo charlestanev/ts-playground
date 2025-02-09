@@ -276,3 +276,134 @@
 // ];
 
 // testCommands.forEach(command => processCommand(command));
+
+
+
+
+// // 5.	Company Roster
+// // Define a class Employee that holds the following information: name, salary, position, department, email, and age. The name, salary, position, and department are mandatory, while the rest are optional.
+// // Your task is to write a program that takes N lines of information about employees from the console and calculates the department with the highest average salary, and prints for each employee in that department his name, salary, email, and age - sorted by salary in descending order. If an employee doesn't have an email – in place of that field, you should print "n/a" instead, if he doesn't have an age – print "-1" instead. Print in the following format:
+// // "Highest Average Salary: {department}
+// // {name1} {salary1} {email1} {age1}
+// // {name2} {salary2} {email2} {age2}
+// // …
+// // {namen} {salaryn} {emailn} {agen}"
+// // The salary should be printed to two decimal places after the separator.
+// // Hint: You can define a Department class that holds a list of employees.
+// // Examples
+// // Input	Output
+// // 4
+// // Peter 120.00 Dev Development peter@abv.bg 28
+// // Tina 333.33 Manager Marketing 33
+// // Sam 840.20 ProjectLeader Development sam@sam.com
+// // George 0.20 Freeloader Nowhere 18	Highest Average Salary: Development
+// // Sam 840.20 sam@sam.com -1
+// // Peter 120.00 peter@abv.bg 28
+// // 6
+// // Silver 496.37 Temp Coding silver@yahoo.com
+// // Sam 610.13 Manager Sales
+// // John 609.99 Manager Sales john@abv.bg 44
+// // Venci 0.02 Director BeerDrinking beer@beer.br 23
+// // Andre 700.00 Director Coding
+// // Popeye 13.3333 Sailor SpinachGroup popeye@pop.ey	Highest Average Salary: Sales
+// // Sam 610.13 n/a -1
+// // John 609.99 john@abv.bg 44
+
+// class Employee {
+//     private _name: string;
+//     private _salary: number;
+//     private _position: string;
+//     private _department: string;
+//     private _email: string;
+//     private _age: number;
+
+//     constructor(name: string, salary: number, position: string, department: string, email: string = "n/a", age: number = -1) {
+//         this._name = name;
+//         this._salary = salary;
+//         this._position = position;
+//         this._department = department;
+//         this._email = email;
+//         this._age = age;
+//     }
+
+//     public get salary(): number {
+//         return this._salary;
+//     }
+
+//     public getEmployeeInfo(): string {
+//         return `${this._name} ${this._salary.toFixed(2)} ${this._email} ${this._age}`;
+//     }
+// }
+
+// class Department {
+//     private _name: string;
+//     private _employees: Employee[] = [];
+
+//     constructor(name: string) {
+//         this._name = name;
+//     }
+
+//     public addEmployee(employee: Employee): void {
+//         this._employees.push(employee);
+//     }
+
+//     public getAverageSalary(): number {
+//         const totalSalary = this._employees.reduce((sum, emp) => sum + emp.salary, 0);
+//         return this._employees.length > 0
+//             ? totalSalary / this._employees.length
+//             : 0;
+//     }
+
+//     public get name(): string {
+//         return this._name
+//     }
+
+//     public getSortedEmployees(): Employee[] {
+//         return this._employees.sort((a, b) => (b.salary - a.salary));
+//     }
+// }
+
+// const departments: Map<string, Department> = new Map();
+
+// function processEmployeeData(employeeData: string[]): void {
+//     for (const data of employeeData) {
+//         const parts = data.split(' ');
+//         const [name, salaryString, position, department, email, ageString] = parts;
+//         const salary = parseInt(salaryString);
+//         const age = ageString ? parseInt(ageString) : -1;
+
+//         if (!departments.has(department)) {
+//             departments.set(department, new Department(department))
+//         }
+
+//         const newEmployee = new Employee(name, salary, position, department, email ?? 'n/a', age);
+//         departments.get(department)!.addEmployee(newEmployee);
+//     }
+// }
+
+// function findHighestPaidDepartment(): void {
+//     let highestPaidDepartment: Department | null = null;
+
+//     for (const department of departments.values()) {
+//         if (!highestPaidDepartment || department.getAverageSalary() > highestPaidDepartment.getAverageSalary()) {
+//             highestPaidDepartment = department;
+//         }
+//     }
+
+//     if (highestPaidDepartment) {
+//         console.log(`Highest Average Salary: ${highestPaidDepartment.name}`);
+//         for (const employee of highestPaidDepartment.getSortedEmployees()) {
+//             console.log(employee.getEmployeeInfo());
+//         }
+//     }
+// }
+
+// const inputData = [
+//     "Peter 120.00 Dev Development peter@abv.bg 28",
+//     "Tina 333.33 Manager Marketing 33",
+//     "Sam 840.20 ProjectLeader Development sam@sam.com",
+//     "George 0.20 Freeloader Nowhere 18"
+// ];
+
+// processEmployeeData(inputData);
+// findHighestPaidDepartment();
