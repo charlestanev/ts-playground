@@ -133,6 +133,39 @@
 
 
 
+// 0.5: Мениджър на настройки (Config Manager)
+// Целта е да създадем клас, който съхранява настройки с ключове от тип string и стойности от произволен тип.
+// Този клас ще има методи за добавяне, извличане и премахване на настройки.
+
+class ConfingManager<T> {
+    private settings: { [key: string]: T } = {};
+
+    setConfig(key: string, value: T) {
+        this.settings[key] = value;
+    }
+
+    getConfig(key: string): T | undefined {
+        return this.settings[key];
+    }
+
+    removeConfig(key: string): void {
+        delete this.settings[key];
+    }
+}
+
+const numericConfig = new ConfingManager<number>();
+numericConfig.setConfig('maxUsers', 100);
+numericConfig.setConfig('timeout', 2000);
+console.log(numericConfig.getConfig('maxUsers'));
+numericConfig.removeConfig('timeout');
+console.log(numericConfig.getConfig("timeout"));
+
+
+
+
+
+
+
 
 
 
