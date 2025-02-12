@@ -1,22 +1,37 @@
-// 0. Кутия за съхранение на предмети
-// Трябва да създадем клас StorageBox, 
-// който може да съхранява един елемент от произволен тип.
-// Трябва да добавим методи за запазване и извличане на този елемент.
+// // 0. Кутия за съхранение на предмети
+// // Трябва да създадем клас StorageBox,
+// // който може да съхранява един елемент от произволен тип.
+// // Трябва да добавим методи за запазване и извличане на този елемент.
 
-class Storagebox<T> {
-    private item: T | null = null;
+// class Storagebox<T> {
+//     private item: T | null = null;
 
-    setItem(item: T): void {
-        this.item = item;
-    }
-    getItem(): T | null {
-        return this.item
-    }
-}
+//     setItem(item: T): void {
+//         this.item = item;
+//     }
+//     getItem(): T | null {
+//         return this.item
+//     }
+// }
 
-const numberBox = new Storagebox<number>();
-numberBox.setItem(42);
-console.log(numberBox.getItem());
+// const numberBox = new Storagebox<number>();
+// numberBox.setItem(42);
+// console.log(numberBox.getItem());
+
+// const stringBox = new Storagebox<string>();
+// stringBox.setItem('string for exapmle');
+// console.log(stringBox.getItem());
+
+// const objectBox = new Storagebox();
+// objectBox.setItem({ name: 'ivan', age: 1000000 });
+// console.log(objectBox.getItem());
+
+
+
+
+
+
+
 
 
 
