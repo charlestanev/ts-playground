@@ -164,31 +164,61 @@
 
 
 
-// 0.6: Опашка от елементи (Queue)
-// Трябва да създадем клас, който работи като опашка (FIFO - First In, First Out).
-// Класът трябва да има методи за добавяне (enqueue) и премахване (dequeue) на елементи.
-class Queue<T> {
-    private elements: T[] = [];
+// // 0.6: Опашка от елементи (Queue)
+// // Трябва да създадем клас, който работи като опашка (FIFO - First In, First Out).
+// // Класът трябва да има методи за добавяне (enqueue) и премахване (dequeue) на елементи.
+// class Queue<T> {
+//     private elements: T[] = [];
 
-    enqueue(element: T): void {
-        this.elements.push(element);
-    }
+//     enqueue(element: T): void {
+//         this.elements.push(element);
+//     }
 
-    dequeue(): T | undefined {
-        return this.elements.shift();
-    }
+//     dequeue(): T | undefined {
+//         return this.elements.shift();
+//     }
 
-    isEmpty(): boolean {
-        return this.elements.length === 0;
-    }
-}
+//     isEmpty(): boolean {
+//         return this.elements.length === 0;
+//     }
+// }
 
-const numberQueue = new Queue<number>();
-numberQueue.enqueue(1);
-numberQueue.enqueue(2);
-numberQueue.enqueue(3);
-console.log(numberQueue.dequeue());
-console.log(numberQueue.isEmpty());
+// const numberQueue = new Queue<number>();
+// numberQueue.enqueue(1);
+// numberQueue.enqueue(2);
+// numberQueue.enqueue(3);
+// console.log(numberQueue.dequeue());
+// console.log(numberQueue.isEmpty());
+
+
+
+
+
+// // 0.7: Проста база от данни за студенти
+// // Целта е да създадем клас, който ще използва Map за съхранение на студентски номера и имена.
+// // Ще реализираме методи за добавяне, извличане и премахване на студенти.
+// class StudentDatabase {
+//     private students: Map<number, string> = new Map();
+
+//     addStudent(id: number, name: string): void {
+//         this.students.set(id, name);
+//     }
+
+//     getStudent(id: number): string | undefined {
+//         return this.students.get(id);
+//     }
+
+//     removeStudent(id: number): void {
+//         this.students.delete(id);
+//     }
+// }
+
+// const studentDB = new StudentDatabase();
+// studentDB.addStudent(101, "Иван Иванов");
+// studentDB.addStudent(102, "Мария Петрова");
+// console.log(studentDB.getStudent(101));
+// studentDB.removeStudent(101);
+// console.log(studentDB.getStudent(101));
 
 
 
