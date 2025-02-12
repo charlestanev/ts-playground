@@ -1,5 +1,26 @@
+// 0. Кутия за съхранение на предмети
+// Трябва да създадем клас StorageBox, 
+// който може да съхранява един елемент от произволен тип.
+// Трябва да добавим методи за запазване и извличане на този елемент.
 
-// tuk
+class Storagebox<T> {
+    private item: T | null = null;
+
+    setItem(item: T): void {
+        this.item = item;
+    }
+    getItem(): T | null {
+        return this.item
+    }
+}
+
+const numberBox = new Storagebox<number>();
+numberBox.setItem(42);
+console.log(numberBox.getItem());
+
+
+
+
 // // 1.	Generic Box of String
 // // Create a generic class Box that takes one property from the constructor. This property must be initialized with generic type. Create a toString() method that returns a message in the following format: "{data} is of type {type}".
 // // Examples
@@ -143,3 +164,28 @@
 // dealership.sellCar('BG04', 'CLK Class');
 
 // console.log(dealership.showDetails());
+
+
+
+
+
+// 4.	Bank Transactions
+// Create an abstract generic class CreateAccount that takes two generic type parameters: bankName and bankID.
+// Create a class PersonalAccount that extends CreateAccount and has three properties of its own:
+// •	Readonly property ownerName (string)
+// •	Public property money (number) which is initially set to 0
+// •	Public property recentTransactions which is initially set to empty object
+// Only the ownerName is taken through the constructor.
+
+// Make the following three methods:
+// •	deposit(amount) – simply add the amount to the money you currently have
+// •	expense(amount, expenseType) – check if you have enough money (>= 0) to make the expense. If so put the expenseType as key and the amount as a value to the recentTransactions object. Furthermore, if have made the same expense more than once simply add the new amount to the existing one. However, if you don’t have enough money for the expense throw a new error: “You cant make {expenseType} transaction”
+// •	showDetails() – Calculate the total amount of money spent on expenses and return a message in the following format:
+
+// "Bank name: {bankName}
+// Bank ID: {bankID}
+// Owner name: {ownerName}
+// Money: {money}
+// Money spent: {totalMoneySpentOnExpenses}"
+
+
