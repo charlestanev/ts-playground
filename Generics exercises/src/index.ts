@@ -224,6 +224,37 @@
 
 
 
+
+// // 0.8: Управление на библиотека
+// // Целта е да създадем клас, който ще съхранява информация за книги и техния брой наличности.
+// // Ще използваме Map за свързване на името на книгата с броя налични копия.
+// class Library {
+//     private books: Map<string, number> = new Map();
+
+//     addBook(title: string, quantity: number): void {
+//         this.books.set(title, (this.books.get(title) || 0) + quantity);
+//     }
+
+//     getBookQuantity(title: string): number | undefined {
+//         return this.books.get(title);
+//     }
+
+//     removeBook(title: string): void {
+//         this.books.delete(title);
+//     }
+// }
+
+// const myLibrary = new Library();
+// myLibrary.addBook("Война и мир", 5);
+// myLibrary.addBook("Престъпление и наказание", 3);
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+// myLibrary.removeBook("Война и мир");
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+
+
+
+
+
 // // 1.	Generic Box of String
 // // Create a generic class Box that takes one property from the constructor. This property must be initialized with generic type. Create a toString() method that returns a message in the following format: "{data} is of type {type}".
 // // Examples
