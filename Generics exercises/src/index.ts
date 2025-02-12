@@ -106,6 +106,34 @@
 
 
 
+// // 0.4: Стек от елементи
+// // Трябва да създадем клас, който работи като стек (структура от данни LIFO - Last In, First Out)
+// // и предоставя методи за добавяне (push) и премахване (pop) на елементи
+// class Stack<T> {
+//     private elements: T[] = [];
+
+//     push(element: T): void {
+//         this.elements.push(element);
+//     }
+
+//     pop(): T | undefined {
+//         return this.elements.pop();
+//     }
+// }
+
+// const stack = new Stack<number>();
+// stack.push(10);
+// stack.push(200);
+// stack.push(3000);
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+
+
+
+
+
+
 
 
 
