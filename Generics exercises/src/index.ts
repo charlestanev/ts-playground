@@ -30,9 +30,56 @@
 
 
 
+// // 0.1: Двойка от два елемента
+// // Този клас трябва да съхранява две различни стойности от различни типове
+// // и да позволява достъп до тях чрез методи
+// class Pair<A, B> {
+//     constructor(private first: A, private second: B) { }
+
+//     getFirst(): A {
+//         return this.first;
+//     }
+
+//     getSecond(): B {
+//         return this.second;
+//     }
+// }
+
+// const numberAndString = new Pair<number, string>(10, 'ten');
+// console.log(numberAndString.getFirst());
+// console.log(numberAndString.getSecond());
 
 
 
+
+
+
+// // 0.2: Списък от елементи
+// // Трябва да създадем клас, който съхранява списък от елементи от един и същ тип
+// // и предоставя методи за добавяне на елементи и извличане на списъка
+// class SimpleList<T> {
+//     private items: T[] = [];
+
+//     addItem(item: T): void {
+//         this.items.push(item);
+//     }
+
+//     getItem(): T[] {
+//         return this.items;
+//     }
+// }
+
+// const numberList = new SimpleList<number>();
+// numberList.addItem(1);
+// numberList.addItem(20);
+// numberList.addItem(300);
+// console.log(numberList.getItem());
+
+// const stringList = new SimpleList<string>();
+// stringList.addItem('Apple');
+// stringList.addItem('Banana');
+// stringList.addItem('Shnur');
+// console.log(stringList.getItem());
 
 
 
