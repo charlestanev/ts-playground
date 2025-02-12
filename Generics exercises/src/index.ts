@@ -83,6 +83,32 @@
 
 
 
+
+
+// // 0.3: Списък от елементи
+// class DataContainer<T, U> {
+//     constructor(private data1: T, private data2: U) { }
+
+//     getData1(): T {
+//         return this.data1
+//     }
+
+//     getData2(): U {
+//         return this.data2;
+//     }
+// }
+
+// const mixedData = new DataContainer<number, boolean>(100, true);
+// console.log(mixedData.getData1());
+// console.log(mixedData.getData2());
+
+
+
+
+
+
+
+
 // // 1.	Generic Box of String
 // // Create a generic class Box that takes one property from the constructor. This property must be initialized with generic type. Create a toString() method that returns a message in the following format: "{data} is of type {type}".
 // // Examples
