@@ -133,38 +133,62 @@
 
 
 
-// 0.5: Мениджър на настройки (Config Manager)
-// Целта е да създадем клас, който съхранява настройки с ключове от тип string и стойности от произволен тип.
-// Този клас ще има методи за добавяне, извличане и премахване на настройки.
+// // 0.5: Мениджър на настройки (Config Manager)
+// // Целта е да създадем клас, който съхранява настройки с ключове от тип string и стойности от произволен тип.
+// // Този клас ще има методи за добавяне, извличане и премахване на настройки.
 
-class ConfingManager<T> {
-    private settings: { [key: string]: T } = {};
+// class ConfingManager<T> {
+//     private settings: { [key: string]: T } = {};
 
-    setConfig(key: string, value: T) {
-        this.settings[key] = value;
+//     setConfig(key: string, value: T) {
+//         this.settings[key] = value;
+//     }
+
+//     getConfig(key: string): T | undefined {
+//         return this.settings[key];
+//     }
+
+//     removeConfig(key: string): void {
+//         delete this.settings[key];
+//     }
+// }
+
+// const numericConfig = new ConfingManager<number>();
+// numericConfig.setConfig('maxUsers', 100);
+// numericConfig.setConfig('timeout', 2000);
+// console.log(numericConfig.getConfig('maxUsers'));
+// numericConfig.removeConfig('timeout');
+// console.log(numericConfig.getConfig("timeout"));
+
+
+
+
+
+// 0.6: Опашка от елементи (Queue)
+// Трябва да създадем клас, който работи като опашка (FIFO - First In, First Out).
+// Класът трябва да има методи за добавяне (enqueue) и премахване (dequeue) на елементи.
+class Queue<T> {
+    private elements: T[] = [];
+
+    enqueue(element: T): void {
+        this.elements.push(element);
     }
 
-    getConfig(key: string): T | undefined {
-        return this.settings[key];
+    dequeue(): T | undefined {
+        return this.elements.shift();
     }
 
-    removeConfig(key: string): void {
-        delete this.settings[key];
+    isEmpty(): boolean {
+        return this.elements.length === 0;
     }
 }
 
-const numericConfig = new ConfingManager<number>();
-numericConfig.setConfig('maxUsers', 100);
-numericConfig.setConfig('timeout', 2000);
-console.log(numericConfig.getConfig('maxUsers'));
-numericConfig.removeConfig('timeout');
-console.log(numericConfig.getConfig("timeout"));
-
-
-
-
-
-
+const numberQueue = new Queue<number>();
+numberQueue.enqueue(1);
+numberQueue.enqueue(2);
+numberQueue.enqueue(3);
+console.log(numberQueue.dequeue());
+console.log(numberQueue.isEmpty());
 
 
 
