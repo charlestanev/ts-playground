@@ -466,23 +466,99 @@
 
 
 
-// 4.	Bank Transactions
-// Create an abstract generic class CreateAccount that takes two generic type parameters: bankName and bankID.
-// Create a class PersonalAccount that extends CreateAccount and has three properties of its own:
-// •	Readonly property ownerName (string)
-// •	Public property money (number) which is initially set to 0
-// •	Public property recentTransactions which is initially set to empty object
-// Only the ownerName is taken through the constructor.
+// // 4.	Bank Transactions
+// // Create an abstract generic class CreateAccount that takes two generic type parameters: bankName and bankID.
+// // Create a class PersonalAccount that extends CreateAccount and has three properties of its own:
+// // •	Readonly property ownerName (string)
+// // •	Public property money (number) which is initially set to 0
+// // •	Public property recentTransactions which is initially set to empty object
+// // Only the ownerName is taken through the constructor.
 
-// Make the following three methods:
-// •	deposit(amount) – simply add the amount to the money you currently have
-// •	expense(amount, expenseType) – check if you have enough money (>= 0) to make the expense. If so put the expenseType as key and the amount as a value to the recentTransactions object. Furthermore, if have made the same expense more than once simply add the new amount to the existing one. However, if you don’t have enough money for the expense throw a new error: “You cant make {expenseType} transaction”
-// •	showDetails() – Calculate the total amount of money spent on expenses and return a message in the following format:
+// // Make the following three methods:
+// // •	deposit(amount) – simply add the amount to the money you currently have
+// // •	expense(amount, expenseType) – check if you have enough money (>= 0) to make the expense. If so put the expenseType as key and the amount as a value to the recentTransactions object. Furthermore, if have made the same expense more than once simply add the new amount to the existing one. However, if you don’t have enough money for the expense throw a new error: “You cant make {expenseType} transaction”
+// // •	showDetails() – Calculate the total amount of money spent on expenses and return a message in the following format:
 
-// "Bank name: {bankName}
-// Bank ID: {bankID}
-// Owner name: {ownerName}
-// Money: {money}
-// Money spent: {totalMoneySpentOnExpenses}"
+// // "Bank name: {bankName}
+// // Bank ID: {bankID}
+// // Owner name: {ownerName}
+// // Money: {money}
+// // Money spent: {totalMoneySpentOnExpenses}"
+
+// abstract class CreateAccount<T, U> {
+//     protected bankName: T;
+//     protected bankID: U;
+
+//     constructor(bankName: T, bankID: U) {
+//         this.bankName = bankName;
+//         this.bankID = bankID;
+//     }
+
+//     abstract showDetails(): string;
+// }
+
+// class PersonalAccount extends CreateAccount<string, number> {
+//     readonly ownerName: string;
+
+//     public money: number = 0;
+
+//     public recentTransactions: Map<string, number> = new Map();
+
+//     constructor(bankName: string, bankID: number, ownerName: string) {
+//         super(bankName, bankID);
+//         this.ownerName = ownerName;
+//     }
+
+//     deposit(amount: number): void {
+//         this.money += amount;
+//     }
+
+//     expense(amount: number, expenseType: string): void {
+//         if (this.money < amount) {
+//             throw new Error(`You can't make ${expenseType} transaction`);
+//         }
+
+//         this.money -= amount;
+
+//         if (this.recentTransactions.has(expenseType)) {
+//             this.recentTransactions.set(expenseType, this.recentTransactions.get(expenseType)! + amount);
+//         } else {
+//             this.recentTransactions.set(expenseType, amount);
+//         }
+//     }
+
+//     showDetails(): string {
+//         let totalMoneySpentOnExpenses = Array.from(this.recentTransactions.values()).reduce((sum, expense) => sum + expense, 0);
+
+//         return `Bank name: ${this.bankName}
+//         Bank ID: ${this.bankID}
+//         Owner name: ${this.ownerName}
+//         Money: ${this.money}
+//         Money spent: ${totalMoneySpentOnExpenses}`;
+//     }
+// }
+
+// let account = new PersonalAccount('DSK', 101240, 'Ivan Ivanov');
+
+// account.deposit(1000);
+// account.deposit(1000);
+
+// account.expense(700, 'Buy new phone');
+// account.expense(400, 'Book a vacation');
+// account.expense(400, 'Book a vacation');
+// account.expense(100, 'Buy food');
+
+// console.log(account.showDetails());
 
 
+// let account2 = new PersonalAccount('Fibank', 100000, 'Petar Petrol');
+
+// account2.deposit(10000);
+// account2.deposit(7000);
+
+// account2.expense(1200, 'Buy a new car');
+// account2.expense(200, 'Go to a fancy restaurant');
+// account2.expense(100, 'Go to a bar');
+// account2.expense(30, 'Go to the movies');
+
+// console.log(account2.showDetails());
