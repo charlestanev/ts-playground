@@ -254,6 +254,69 @@
 
 
 
+// // 0.9 Задача: Управление на библиотека с класифициране по жанр
+// interface Book {
+//     title: string;
+//     genre: string;
+//     quantity: number;
+// }
+
+// class Library {
+//     private books: Map<string, Book> = new Map();
+
+//     addBook(title: string, genre: string, quantity: number): void {
+//         const existingBook = this.books.get(title);
+//         if (existingBook) {
+//             existingBook.quantity += quantity;
+//         } else {
+//             this.books.set(title, { title, genre, quantity });
+//         }
+//     }
+
+//     getBookQuantity(title: string): number | undefined {
+//         const book = this.books.get(title);
+//         return book ? book.quantity : undefined;
+//     }
+
+//     removeBook(title: string): void {
+//         this.books.delete(title);
+//     }
+
+//     getBooksByGenre(genre: string): string[] {
+//         const booksInGenre: string[] = [];
+//         this.books.forEach((book) => {
+//             if (book.genre === genre) {
+//                 booksInGenre.push(book.title);
+//             }
+//         });
+//         return booksInGenre;
+//     }
+
+//     updateBookGenre(title: string, newGenre: string): void {
+//         const book = this.books.get(title);
+//         if (book) {
+//             book.genre = newGenre;
+//         }
+//     }
+// }
+
+// const myLibrary = new Library();
+// myLibrary.addBook("Война и мир", "Класика", 5);
+// myLibrary.addBook("Престъпление и наказание", "Класика", 3);
+// myLibrary.addBook("Малки жени", "Роман", 4);
+// myLibrary.addBook("1984", "Дистопия", 2);
+
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+// console.log(myLibrary.getBooksByGenre("Класика"));
+
+// myLibrary.removeBook("1984");
+
+// myLibrary.updateBookGenre("Малки жени", "Класика");
+// console.log(myLibrary.getBooksByGenre("Класика"));
+
+
+
+
 
 // // 1.	Generic Box of String
 // // Create a generic class Box that takes one property from the constructor. This property must be initialized with generic type. Create a toString() method that returns a message in the following format: "{data} is of type {type}".
