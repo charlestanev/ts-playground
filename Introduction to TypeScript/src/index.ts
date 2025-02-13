@@ -1,326 +1,564 @@
-// // 1. Calculate Rectangle Area
+// // 0. Кутия за съхранение на предмети
+// // Трябва да създадем клас StorageBox,
+// // който може да съхранява един елемент от произволен тип.
+// // Трябва да добавим методи за запазване и извличане на този елемент.
 
-// // Write a simple function that calculates rectangle area. You will be given two integers (whole) numbers, which will represent length and width of the rectangle. Calculate and print the area of the rectangle
+// class Storagebox<T> {
+//     private item: T | null = null;
 
-// function calculateRectangleArea(length: number, width: number): number {
-//     let area: number = length * width;
-//     return area;
+//     setItem(item: T): void {
+//         this.item = item;
+//     }
+//     getItem(): T | null {
+//         return this.item
+//     }
 // }
 
-// console.log(calculateRectangleArea(5, 7));
-// console.log(calculateRectangleArea(6, 8));
+// const numberBox = new Storagebox<number>();
+// numberBox.setItem(42);
+// console.log(numberBox.getItem());
+
+// const stringBox = new Storagebox<string>();
+// stringBox.setItem('string for exapmle');
+// console.log(stringBox.getItem());
+
+// const objectBox = new Storagebox();
+// objectBox.setItem({ name: 'ivan', age: 1000000 });
+// console.log(objectBox.getItem());
 
 
 
 
 
-// // 2. Largest Number
+// // 0.1: Двойка от два елемента
+// // Този клас трябва да съхранява две различни стойности от различни типове
+// // и да позволява достъп до тях чрез методи
+// class Pair<A, B> {
+//     constructor(private first: A, private second: B) { }
 
-// // Write a function that takes three number arguments as input and finds the largest of them.
+//     getFirst(): A {
+//         return this.first;
+//     }
 
-// // · Print the following text on the console: `The largest number is {number}.`.
-
-// // · The input comes as three number arguments passed to your function.
-
-// // · The output should be printed to the console.
-
-// // Example
-
-// // Input Output
-
-// // 5, -3, 16 The largest number is 16.
-
-// // -3, -5, -22.5 The largest number is -3.
-
-// function findLargestNumber(num1: number, num2: number, num3: number): void {
-//     let largest: number = Math.max(num1, num2, num3);
-//     console.log(`The largest number is ${largest}.`);
+//     getSecond(): B {
+//         return this.second;
+//     }
 // }
-// findLargestNumber(5, -3, 16);
-// findLargestNumber(-3, -5, -22.5);
+
+// const numberAndString = new Pair<number, string>(10, 'ten');
+// console.log(numberAndString.getFirst());
+// console.log(numberAndString.getSecond());
 
 
 
 
 
-// // 3.	Sum of Numbers N…M
-// // Write a function that takes two integer numbers N and M as an input and prints the sum of all numbers from N to M.
-// // •	The input comes as two string elements that need to be parsed as numbers.
-// // •	The output should print the sum.
+
+// // 0.2: Списък от елементи
+// // Трябва да създадем клас, който съхранява списък от елементи от един и същ тип
+// // и предоставя методи за добавяне на елементи и извличане на списъка
+// class SimpleList<T> {
+//     private items: T[] = [];
+
+//     addItem(item: T): void {
+//         this.items.push(item);
+//     }
+
+//     getItem(): T[] {
+//         return this.items;
+//     }
+// }
+
+// const numberList = new SimpleList<number>();
+// numberList.addItem(1);
+// numberList.addItem(20);
+// numberList.addItem(300);
+// console.log(numberList.getItem());
+
+// const stringList = new SimpleList<string>();
+// stringList.addItem('Apple');
+// stringList.addItem('Banana');
+// stringList.addItem('Shnur');
+// console.log(stringList.getItem());
+
+
+
+
+
+// // 0.3: Списък от елементи
+// class DataContainer<T, U> {
+//     constructor(private data1: T, private data2: U) { }
+
+//     getData1(): T {
+//         return this.data1
+//     }
+
+//     getData2(): U {
+//         return this.data2;
+//     }
+// }
+
+// const mixedData = new DataContainer<number, boolean>(100, true);
+// console.log(mixedData.getData1());
+// console.log(mixedData.getData2());
+
+
+
+
+
+// // 0.4: Стек от елементи
+// // Трябва да създадем клас, който работи като стек (структура от данни LIFO - Last In, First Out)
+// // и предоставя методи за добавяне (push) и премахване (pop) на елементи
+// class Stack<T> {
+//     private elements: T[] = [];
+
+//     push(element: T): void {
+//         this.elements.push(element);
+//     }
+
+//     pop(): T | undefined {
+//         return this.elements.pop();
+//     }
+// }
+
+// const stack = new Stack<number>();
+// stack.push(10);
+// stack.push(200);
+// stack.push(3000);
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+
+
+
+
+
+// // 0.5: Мениджър на настройки (Config Manager)
+// // Целта е да създадем клас, който съхранява настройки с ключове от тип string и стойности от произволен тип.
+// // Този клас ще има методи за добавяне, извличане и премахване на настройки.
+
+// class ConfingManager<T> {
+//     private settings: { [key: string]: T } = {};
+
+//     setConfig(key: string, value: T) {
+//         this.settings[key] = value;
+//     }
+
+//     getConfig(key: string): T | undefined {
+//         return this.settings[key];
+//     }
+
+//     removeConfig(key: string): void {
+//         delete this.settings[key];
+//     }
+// }
+
+// const numericConfig = new ConfingManager<number>();
+// numericConfig.setConfig('maxUsers', 100);
+// numericConfig.setConfig('timeout', 2000);
+// console.log(numericConfig.getConfig('maxUsers'));
+// numericConfig.removeConfig('timeout');
+// console.log(numericConfig.getConfig("timeout"));
+
+
+
+
+
+// // 0.6: Опашка от елементи (Queue)
+// // Трябва да създадем клас, който работи като опашка (FIFO - First In, First Out).
+// // Класът трябва да има методи за добавяне (enqueue) и премахване (dequeue) на елементи.
+// class Queue<T> {
+//     private elements: T[] = [];
+
+//     enqueue(element: T): void {
+//         this.elements.push(element);
+//     }
+
+//     dequeue(): T | undefined {
+//         return this.elements.shift();
+//     }
+
+//     isEmpty(): boolean {
+//         return this.elements.length === 0;
+//     }
+// }
+
+// const numberQueue = new Queue<number>();
+// numberQueue.enqueue(1);
+// numberQueue.enqueue(2);
+// numberQueue.enqueue(3);
+// console.log(numberQueue.dequeue());
+// console.log(numberQueue.isEmpty());
+
+
+
+
+
+// // 0.7: Проста база от данни за студенти
+// // Целта е да създадем клас, който ще използва Map за съхранение на студентски номера и имена.
+// // Ще реализираме методи за добавяне, извличане и премахване на студенти.
+// class StudentDatabase {
+//     private students: Map<number, string> = new Map();
+
+//     addStudent(id: number, name: string): void {
+//         this.students.set(id, name);
+//     }
+
+//     getStudent(id: number): string | undefined {
+//         return this.students.get(id);
+//     }
+
+//     removeStudent(id: number): void {
+//         this.students.delete(id);
+//     }
+// }
+
+// const studentDB = new StudentDatabase();
+// studentDB.addStudent(101, "Иван Иванов");
+// studentDB.addStudent(102, "Мария Петрова");
+// console.log(studentDB.getStudent(101));
+// studentDB.removeStudent(101);
+// console.log(studentDB.getStudent(101));
+
+
+
+
+
+
+// // 0.8: Управление на библиотека
+// // Целта е да създадем клас, който ще съхранява информация за книги и техния брой наличности.
+// // Ще използваме Map за свързване на името на книгата с броя налични копия.
+// class Library {
+//     private books: Map<string, number> = new Map();
+
+//     addBook(title: string, quantity: number): void {
+//         this.books.set(title, (this.books.get(title) || 0) + quantity);
+//     }
+
+//     getBookQuantity(title: string): number | undefined {
+//         return this.books.get(title);
+//     }
+
+//     removeBook(title: string): void {
+//         this.books.delete(title);
+//     }
+// }
+
+// const myLibrary = new Library();
+// myLibrary.addBook("Война и мир", 5);
+// myLibrary.addBook("Престъпление и наказание", 3);
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+// myLibrary.removeBook("Война и мир");
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+
+
+
+
+// // 0.9 Задача: Управление на библиотека с класифициране по жанр
+// interface Book {
+//     title: string;
+//     genre: string;
+//     quantity: number;
+// }
+
+// class Library {
+//     private books: Map<string, Book> = new Map();
+
+//     addBook(title: string, genre: string, quantity: number): void {
+//         const existingBook = this.books.get(title);
+//         if (existingBook) {
+//             existingBook.quantity += quantity;
+//         } else {
+//             this.books.set(title, { title, genre, quantity });
+//         }
+//     }
+
+//     getBookQuantity(title: string): number | undefined {
+//         const book = this.books.get(title);
+//         return book ? book.quantity : undefined;
+//     }
+
+//     removeBook(title: string): void {
+//         this.books.delete(title);
+//     }
+
+//     getBooksByGenre(genre: string): string[] {
+//         const booksInGenre: string[] = [];
+//         this.books.forEach((book) => {
+//             if (book.genre === genre) {
+//                 booksInGenre.push(book.title);
+//             }
+//         });
+//         return booksInGenre;
+//     }
+
+//     updateBookGenre(title: string, newGenre: string): void {
+//         const book = this.books.get(title);
+//         if (book) {
+//             book.genre = newGenre;
+//         }
+//     }
+// }
+
+// const myLibrary = new Library();
+// myLibrary.addBook("Война и мир", "Класика", 5);
+// myLibrary.addBook("Престъпление и наказание", "Класика", 3);
+// myLibrary.addBook("Малки жени", "Роман", 4);
+// myLibrary.addBook("1984", "Дистопия", 2);
+
+// console.log(myLibrary.getBookQuantity("Война и мир"));
+// console.log(myLibrary.getBooksByGenre("Класика"));
+
+// myLibrary.removeBook("1984");
+
+// myLibrary.updateBookGenre("Малки жени", "Класика");
+// console.log(myLibrary.getBooksByGenre("Класика"));
+
+
+
+
+
+// // 1.	Generic Box of String
+// // Create a generic class Box that takes one property from the constructor. This property must be initialized with generic type. Create a toString() method that returns a message in the following format: "{data} is of type {type}".
 // // Examples
 // // Input	Output
-// // '1', '5' 	15
-// // '-8', '20'	174
+// // let box1 = new Box(['test']);
+// // let box2 = new Box(20);
+// // let box3 = new Box('Hello');
 
-// function sumNumbersInRange(n: string, m: string): void {
-//     let start: number = parseInt(n);
-//     let end: number = parseInt(m);
+// // console.log(box1.toString());
+// // console.log(box2.toString());
+// // console.log(box3.toString());	test is of type object
+// // 20 is of type number
+// // Hello is of type string
 
-//     let sum: number = 0;
+// class Box<T> {
+//     private _value: T;
 
-//     for (let i = start; i <= end; i++) {
-//         sum += i;
+//     constructor(value: T) {
+//         this._value = value;
 //     }
 
-//     console.log(sum);
+//     public toString(): string {
+//         return `${this._value} is of type ${typeof this._value}`;
+//     }
 // }
-// sumNumbersInRange('1', '5');
-// sumNumbersInRange('-8', '20');
+
+// let box1 = new Box(['test']);
+// let box2 = new Box(20);
+// let box3 = new Box('Hello');
+
+// console.log(box1.toString());
+// console.log(box2.toString());
+// console.log(box3.toString());
 
 
 
 
 
-// // 4.	Day of Week
-// // Write a function that prints a number between 1 and 7 when a day of the week is passed to it as a string and an error message if the string is not recognized.
-// // •	The input comes as a single-string argument.
-// // •	The output should be printed.
+// // 2.	Generic Compare Elements
+// // Create a generic class that has as a property an array of generic type. Create a compare(comparator) method that takes an argument of any type. Iterate through the array and compare each element of the array to the comparator and return how many times the comparator is matched.
 // // Examples
 // // Input	Output
-// // 'Monday'	1
-// // 'Friday'	5
-// // 'Invalid'	error
+// // let c = new CompareElements(['a', 'b', 'ab', 'abc', 'cba', 'b']);
 
-// function getDayNumber(day: string): void {
-//     const daysOfWeek: { [key: string]: number } = {
-//         "Monday": 1,
-//         "Tuesday": 2,
-//         "Wednesday": 3,
-//         "Thursday": 4,
-//         "Friday": 5,
-//         "Saturday": 6,
-//         "Sunday": 7
+// // console.log(c.compare('b'));
+// // 	2
+// // let c = new CompareElements([1, 2, 3, 4, 5, 1, 1]);
+
+// // console.log(c.compare(1));	3
+
+// class CompareElements<T> {
+//     private _elements: T[];
+
+//     constructor(elements: T[]) {
+//         this._elements = elements;
 //     }
 
-//     if (daysOfWeek[day]) {
-//         console.log(daysOfWeek[day]);
-//     } else {
-//         console.log("error");
+//     public compare(comparator: T): number {
+//         return this._elements.filter(element => element === comparator).length;
 //     }
 // }
 
-// getDayNumber("Monday");
-// getDayNumber("Friday");
-// getDayNumber("Invalid");
+// let c1 = new CompareElements(['a', 'b', 'ab', 'abc', 'cba', 'b']);
+// console.log(c1.compare('b'));
+
+// let c2 = new CompareElements([1, 2, 3, 4, 5, 1, 1]);
+// console.log(c2.compare(1));
 
 
 
 
 
-// 5.	Math Operations
-// Write a function that takes two numbers and a string as an input.
+// // 3.	Car Dealership
+// // Create two generic interfaces:
+// // •	Dealership that takes one generic type parameter: dealershipName and another property - soldCars (number)
+// // •	Actions that takes one generic type parameter and defines a sellCar(dealerID , model) method, where both parameters are of the generic type passed to the interface
 
-// The string may be one of the following: '+', '-', '*', '/', '%', '**'.
+// // Create a class CarDealership that implements both Dealership and Actions and has one property of its own:
+// // •	Public property modelsSold which is initially set to empty object
+// // Note: The dealershipName is taken through the constructor and the soldCars is initially set to 0.
+// // Make the following two methods:
+// // •	sellCar(dealerID , model)  – add the dealerID as a key and the model as value in the modelsSold object and increase the soldCars by 1;
+// // •	showDetails() – return a message in the following format:
 
-// Print on the console the result of the mathematical operation between both numbers and the operator you receive as a string.
-// The input comes as two numbers and a string argument passed to your function.
-// The output should be printed on the console.
-// Examples
-// Input	Output
-// 5, 6, '+'	11
-// 3, 5.5, '*'	16.5
-
-// function mathOperation(num1: number, num2: number, operator: string): void {
-//     let result: number;
-
-//     switch (operator) {
-//         case '+':
-//             result = num1 + num2;
-//             break;
-//         case '-':
-//             result = num1 - num2;
-//             break;
-//         case '*':
-//             result = num1 * num2;
-//             break;
-//         case '/':
-//             result = num2 !== 0 ? num1 / num2 : NaN;
-//             break;
-//         case '%':
-//             result = num1 % num2;
-//             break;
-//         case '**':
-//             result = num1 ** num2;
-//             break;
-//         default:
-//             console.log("Invalid operator");
-//             return;
-//     }
-
-//     console.log(result);
-// }
-// mathOperation(5, 6, '+');
-// mathOperation(3, 5.5, '*');
-
-
-
-
-
-// // 6.	Even Position Element
-// // Write a function that finds the elements at even positions in an array.
-// // The input comes as an array of string elements.
-// // The output is printed on the console. Collect all elements in a string, separated by space.
-// // Examples
-// // Input	Output		Input	Output
-// // ['20', '30', '40', '50', '60']	20 40 60		['5', '10']	5
-
-// function evenPositionElements(arr: string[]): void {
-//     let result: string = arr.filter((_, index) => index % 2 === 0).join(' ');
-//     console.log(result);
-// }
-
-// evenPositionElements(['20', '30', '40', '50', '60']);
-// evenPositionElements(['5', '10']);
-
-
-
-
-
-// // 7.	Bigger Half
-// // You are given an array of numbers. Write a JS function that sorts the array in ascending order and returns a new array, containing only the second half of the input. If there is an odd number of elements in the input, always take the bigger half. For example, if the input array contains 4 elements, the output should be 2, and if the input is 5 – the output is 3.
-// // The input comes as an array of number elements.
-// // The output is the return value of the function and should be an array of numbers.
-// // Example
-// // Input	Output
-// // [4, 7, 2, 5]	[5, 7]
-// // [3, 19, 14, 7, 2, 19, 6]	[7, 14, 19, 19]
-
-
-// function biggerHalf(arr: number[]): number[] {
-//     arr.sort((a, b) => (a - b));
-
-//     let startIndex = Math.floor(arr.length / 2);
-//     return arr.slice(startIndex);
-// }
-
-// console.log(biggerHalf([4, 7, 2, 5]));
-// console.log(biggerHalf([3, 19, 14, 7, 2, 19, 6]));
-
-
-
-
-
-// 8.	Cats
-// Write a function that receives array of strings in the following format '{cat name} {age}'.
-// Create a Cat class that receives in the constructor the name and the age parsed from the input.
-// It should also have a method named "meow" that will print "{cat name}, age {age} says Meow" on the console.
-// For each of the strings provided, you must create a cat object and invoke the .meow () method.
-// Examples
-// Input	Output
-// ['Mellow 2', 'Tom 5']	Mellow, age 2 says Meow
-// Tom, age 5 says Meow
-// ['Candy 1', 'Poppy 3', 'Nyx 2']	Candy, age 1 says Meow
-// Poppy, age 3 says Meow
-// Nyx, age 2 says Meow
-
-// class Cat {
-//     name: string;
-//     age: number;
-
-//     constructor(name: string, age: number) {
-//         this.name = name;
-//         this.age = age;
-//     }
-
-//     meow(): void {
-//         console.log(`${this.name}, age ${this.age} says Meow`);
-//     }
-// }
-
-// function processCats(arr: string[]): void {
-//     for (const line of arr) {
-//         let [name, age] = line.split(' ');
-//         let cat = new Cat(name, Number(age));
-
-//         cat.meow();
-//     }
-// }
-
-// processCats(['Mellow 2', 'Tom 5']);
-// processCats(['Candy 1', 'Poppy 3', 'Nyx 2']);
-
-
-
-
-
-// // 9.	Employees
-// // You're tasked to create a list of employees and their personal numbers.
-// // You will receive an array of strings. Each string is an employee name and to assign them a personal number you have to find the length of the name (whitespace included).
-// // At the end print all the list employees in the following format:
-// //  "Name: {employeeName} -- Personal Number: {personalNum}"
+// // "{Dealership}:
+// // {dealerID} sold {model}
+// // ..."
 // // Examples
 // // Input	Output
-// // [
-// // 'Silas Butler',
-// // 'Adnaan Buckley',
-// // 'Juan Peterson',
-// // 'Brendan Villarreal'
-// // ]	Name: Silas Butler -- Personal Number: 12
-// // Name: Adnaan Buckley -- Personal Number: 14
-// // Name: Juan Peterson -- Personal Number: 13
-// // Name: Brendan Villarreal -- Personal Number: 18
-// // [
-// // 'Samuel Jackson',
-// // 'Will Smith',
-// // 'Bruce Willis',
-// // 'Tom Holland'
-// // ]	Name: Samuel Jackson -- Personal Number: 14
-// // Name: Will Smith -- Personal Number: 10
-// // Name: Bruce Willis -- Personal Number: 12
-// // Name: Tom Holland -- Personal Number: 11
+// // let dealership = new CarDealer('SilverStar');
 
-// function getEmployeesList(employees: string[]): void {
-//     for (const name of employees) {
-//         let personalNumber: number = name.length;
+// // dealership.sellCar('BG01', 'C Class');
+// // dealership.sellCar('BG02', 'S Class');
+// // dealership.sellCar('BG03', 'ML Class');
+// // dealership.sellCar('BG04', 'CLK Class');
+// // console.log(dealership.showDetails());	SilverStar:
+// // BG01 sold C Class
+// // BG02 sold S Class
+// // BG03 sold ML Class
+// // BG04 sold CLK Class
 
-//         console.log(`Name: ${name} -- Personal Number: ${personalNumber}`);
+// interface Dealership<T> {
+//     dealershipName: T;
+//     soldCars: number;
+// }
+
+// interface Actions<T> {
+//     sellCar(dealerID: T, model: string): void;
+// }
+
+// class CarDealership<T extends string | number> implements Dealership<T>, Actions<T> {
+//     dealershipName: T;
+//     soldCars: number = 0;
+//     public modelsSold: Map<T, string> = new Map<T, string>();
+
+//     constructor(dealershipName: T) {
+//         this.dealershipName = dealershipName;
+//     }
+
+//     public sellCar(dealerID: T, model: string): void {
+//         this.modelsSold.set(dealerID, model);
+//         this.soldCars++;
+//     }
+
+//     public showDetails(): string {
+//         let details = `${this.dealershipName}:\n`;
+
+//         for (const [dealerID, model] of this.modelsSold) {
+//             details += `${dealerID} sold ${model}\n`;
+//         }
+
+//         return details.trim();
 //     }
 // }
 
-// getEmployeesList([
-//     'Silas Butler',
-//     'Adnaan Buckley',
-//     'Juan Peterson',
-//     'Brendan Villarreal'
-// ]);
+// let dealership = new CarDealership<string>('SilverStar');
 
-// getEmployeesList([
-//     'Samuel Jackson',
-//     'Will Smith',
-//     'Bruce Willis',
-//     'Tom Holland'
-// ]);
+// dealership.sellCar('BG01', 'C Class');
+// dealership.sellCar('BG02', 'S Class');
+// dealership.sellCar('BG03', 'ML Class');
+// dealership.sellCar('BG04', 'CLK Class');
+
+// console.log(dealership.showDetails());
 
 
 
 
 
-// // 10.	Aggregate Elements
-// // Write a program that performs different operations on an array of elements. Implement the following operations:
-// // •	Sum(ai) - calculates the sum of all elements from the input array
-// // •	Sum(1/ai) - calculates the sum of the inverse values (1/ai) of all elements from the array
-// // •	Concat(ai) - concatenates the string representations of all elements from the array
-// // The input comes as an array of number elements.
-// // The output should be printed on the console on a new line for each of the operations.
-// // Examples
-// // Input	Output		Input	Output
-// // [1, 2, 3]	6
-// // 1.8333333333333333
-// // 123		[2, 4, 8, 16]	30
-// // 0.9375
-// // 24816
+// // 4.	Bank Transactions
+// // Create an abstract generic class CreateAccount that takes two generic type parameters: bankName and bankID.
+// // Create a class PersonalAccount that extends CreateAccount and has three properties of its own:
+// // •	Readonly property ownerName (string)
+// // •	Public property money (number) which is initially set to 0
+// // •	Public property recentTransactions which is initially set to empty object
+// // Only the ownerName is taken through the constructor.
 
-// function numberOperations(arr: number[]): void {
-//     let sum = arr.reduce((i, num) => i + num, 0);
+// // Make the following three methods:
+// // •	deposit(amount) – simply add the amount to the money you currently have
+// // •	expense(amount, expenseType) – check if you have enough money (>= 0) to make the expense. If so put the expenseType as key and the amount as a value to the recentTransactions object. Furthermore, if have made the same expense more than once simply add the new amount to the existing one. However, if you don’t have enough money for the expense throw a new error: “You cant make {expenseType} transaction”
+// // •	showDetails() – Calculate the total amount of money spent on expenses and return a message in the following format:
 
-//     let inverseSum = arr.reduce((i, num) => i + (1 / num), 0);
+// // "Bank name: {bankName}
+// // Bank ID: {bankID}
+// // Owner name: {ownerName}
+// // Money: {money}
+// // Money spent: {totalMoneySpentOnExpenses}"
 
-//     let concatenated = arr.join('');
+// abstract class CreateAccount<T, U> {
+//     protected bankName: T;
+//     protected bankID: U;
 
-//     console.log(sum);
-//     console.log(inverseSum);
-//     console.log(concatenated);
+//     constructor(bankName: T, bankID: U) {
+//         this.bankName = bankName;
+//         this.bankID = bankID;
+//     }
+
+//     abstract showDetails(): string;
 // }
 
-// numberOperations([1, 2, 3]);
-// numberOperations([2, 4, 8, 16]);
+// class PersonalAccount extends CreateAccount<string, number> {
+//     readonly ownerName: string;
+
+//     public money: number = 0;
+
+//     public recentTransactions: Map<string, number> = new Map();
+
+//     constructor(bankName: string, bankID: number, ownerName: string) {
+//         super(bankName, bankID);
+//         this.ownerName = ownerName;
+//     }
+
+//     deposit(amount: number): void {
+//         this.money += amount;
+//     }
+
+//     expense(amount: number, expenseType: string): void {
+//         if (this.money < amount) {
+//             throw new Error(`You can't make ${expenseType} transaction`);
+//         }
+
+//         this.money -= amount;
+
+//         if (this.recentTransactions.has(expenseType)) {
+//             this.recentTransactions.set(expenseType, this.recentTransactions.get(expenseType)! + amount);
+//         } else {
+//             this.recentTransactions.set(expenseType, amount);
+//         }
+//     }
+
+//     showDetails(): string {
+//         let totalMoneySpentOnExpenses = Array.from(this.recentTransactions.values()).reduce((sum, expense) => sum + expense, 0);
+
+//         return `Bank name: ${this.bankName}
+//         Bank ID: ${this.bankID}
+//         Owner name: ${this.ownerName}
+//         Money: ${this.money}
+//         Money spent: ${totalMoneySpentOnExpenses}`;
+//     }
+// }
+
+// let account = new PersonalAccount('DSK', 101240, 'Ivan Ivanov');
+
+// account.deposit(1000);
+// account.deposit(1000);
+
+// account.expense(700, 'Buy new phone');
+// account.expense(400, 'Book a vacation');
+// account.expense(400, 'Book a vacation');
+// account.expense(100, 'Buy food');
+
+// console.log(account.showDetails());
+
+
+// let account2 = new PersonalAccount('Fibank', 100000, 'Petar Petrol');
+
+// account2.deposit(10000);
+// account2.deposit(7000);
+
+// account2.expense(1200, 'Buy a new car');
+// account2.expense(200, 'Go to a fancy restaurant');
+// account2.expense(100, 'Go to a bar');
+// account2.expense(30, 'Go to the movies');
+
+// console.log(account2.showDetails());
