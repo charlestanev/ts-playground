@@ -40,6 +40,38 @@
 
 
 
+// 🟠 Задача 3: Създайте класов декоратор, който брои колко обекта от даден клас са създадени.
+interface Constructable {
+    new(...args: any[]): any;
+}
+
+function countInstances(constructor: Constructable) {
+
+    (constructor as any).instanceCount = 0;
+
+    const originalConstructor = constructor;
+
+    const newConstructor: Constructable = class extends originalConstructor {
+        constructor(...args: any[]) {
+            super(...args);
+            (constructor as any).instanceCount++;
+        }
+    };
+
+    return newConstructor;
+}
+
+@countInstances
+class Order {
+    constructor(public id: number) { }
+}
+
+const order1 = new Order(1);
+const order2 = new Order(2);
+console.log((Order as any).instanceCount);
+
+
+
 
 // Задача 10
 // Условие:
