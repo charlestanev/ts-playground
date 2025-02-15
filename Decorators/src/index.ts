@@ -40,37 +40,54 @@
 
 
 
-// 🟠 Задача 3: Създайте класов декоратор, който брои колко обекта от даден клас са създадени.
-interface Constructable {
-    new(...args: any[]): any;
-}
+// // 🟠 Задача 3: Създайте класов декоратор, който брои колко обекта от даден клас са създадени.
+// interface Constructable {
+//     new(...args: any[]): any;
+// }
 
-function countInstances(constructor: Constructable) {
+// function countInstances(constructor: Constructable) {
 
-    (constructor as any).instanceCount = 0;
+//     (constructor as any).instanceCount = 0;
 
-    const originalConstructor = constructor;
+//     const originalConstructor = constructor;
 
-    const newConstructor: Constructable = class extends originalConstructor {
-        constructor(...args: any[]) {
-            super(...args);
-            (constructor as any).instanceCount++;
-        }
-    };
+//     const newConstructor: Constructable = class extends originalConstructor {
+//         constructor(...args: any[]) {
+//             super(...args);
+//             (constructor as any).instanceCount++;
+//         }
+//     };
 
-    return newConstructor;
-}
+//     return newConstructor;
+// }
 
-@countInstances
-class Order {
-    constructor(public id: number) { }
-}
+// @countInstances
+// class Order {
+//     constructor(public id: number) { }
+// }
 
-const order1 = new Order(1);
-const order2 = new Order(2);
-console.log((Order as any).instanceCount);
+// const order1 = new Order(1);
+// const order2 = new Order(2);
+// console.log((Order as any).instanceCount);
 
 
+
+
+
+// // Задача 4: Създайте класов декоратор, който добавя метод greet() с фиксирано съобщение.
+// function addGreetMethod(constructor: Function) {
+//     (constructor as any).prototype.greet = function () {
+//         console.log("Здравейте! Това е генерирано съобщение от декоратор.");
+//     }
+// }
+
+// @addGreetMethod
+// class Customer {
+//     constructor(public name: string) { }
+// }
+
+// const customer = new Customer('Петър');
+// (customer as any).greet();
 
 
 // Задача 10
