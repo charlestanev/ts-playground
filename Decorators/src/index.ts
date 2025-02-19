@@ -218,49 +218,71 @@
 
 
 
-// AccessorDecorators
+// // AccessorDecorators
+// // // Задача 21
+
+// function myAccessorDecorator(
+//     target: any,
+//     propertyKey: string,
+//     descriptor: PropertyDescriptor
+// ) {
+//     console.log("Декораторът на аксесора е изпълнен.");
+
+//     const originalGetter = descriptor.get;
+
+//     descriptor.get = function () {
+//         console.log("Изпълнява се getter.");
+
+//         const result = originalGetter.call(this);
+
+//         return result;
+//     };
+// }
+
+// class MyClass {
+//     private _myProperty: string = "Стойност";
+
+//     @myAccessorDecorator
+//     get myProperty(): string {
+//         return this._myProperty;
+//     }
+
+//     set myProperty(value: string) {
+//         this._myProperty = value;
+//     }
+// }
+
+// const instance = new MyClass();
+
+// console.log(instance.myProperty);
 
 
 
-function myAccessorDecorator(
+
+// Parameter Decorators
+// // // Задача 31
+
+function myParameterDecorator(
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    parameterIndex: number
 ) {
-    console.log("Декораторът на аксесора е изпълнен.");
+    console.log("Декораторът на параметъра е изпълнен.");
 
-    const originalGetter = descriptor.get;
-
-    descriptor.get = function () {
-        console.log("Изпълнява се getter.");
-
-        const result = originalGetter.call(this);
-
-        return result;
-    };
+    console.log(
+        `Параметър ${parameterIndex} на метод ${propertyKey} е декориран.`
+    );
 }
 
 class MyClass {
-    private _myProperty: string = "Стойност";
-
-    @myAccessorDecorator
-    get myProperty(): string {
-        return this._myProperty;
-    }
-
-    set myProperty(value: string) {
-        this._myProperty = value;
+    myMethod(
+        @myParameterDecorator arg1: string,
+        arg2: number
+    ) {
+        console.log("Изпълнява се методът.");
     }
 }
 
 const instance = new MyClass();
 
-console.log(instance.myProperty);
-
-
-
-
-
-// - Аксесорни декоратори
-// - Декоратори за свойства
-// - Декоратори за параметри
+instance.myMethod("Стойност", 123);
