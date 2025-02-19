@@ -1,3 +1,5 @@
+// // // // Class Decorators:
+
 // // Задача 1
 // // Създайте декоратор, който при създаването на обект от даден
 // // клас извежда съобщение в конзолата.
@@ -93,24 +95,22 @@
 
 
 
-// // Задача 5:
-function myClassDecorator(constructor: Function) {
-    console.log('Декораторът на класа е изпълнен');
-    constructor.prototype.newProperty = 'Ново свойство';
-}
+// // // // Задача 5:
+// function myClassDecorator(constructor: Function) {
+//     console.log('Декораторът на класа е изпълнен');
+//     constructor.prototype.newProperty = 'Ново свойство';
+// }
 
-@myClassDecorator
-class MyClass {
-    constructor() {
-        console.log('Конструкторът на класа е изпълнен');
-    }
-}
+// @myClassDecorator
+// class MyClass {
+//     constructor() {
+//         console.log('Конструкторът на класа е изпълнен');
+//     }
+// }
 
-const instance = new MyClass();
-console.log((instance as any).newProperty);
-
-
-
+// const instance = new MyClass();
+// console.log((instance as any).newProperty);
+// console.log(instance);
 
 
 
@@ -130,7 +130,7 @@ console.log((instance as any).newProperty);
 
 
 
-
+// - Metod Declarators
 
 
 // Задача 10
@@ -161,4 +161,57 @@ console.log((instance as any).newProperty);
 // }
 
 // const calc = new Calculator();
-// calc.add(5, 3); 
+// calc.add(5, 3);
+
+
+
+
+
+
+// // Задача 11
+// function myMethodDecorator(
+//     target: any,
+//     propertyKey: string,
+//     descriptor: PropertyDescriptor
+// ) {
+//     console.log("Декораторът на метода е изпълнен.");
+
+//     const originalMethod = descriptor.value;
+//     console.log(descriptor.value);
+
+
+//     descriptor.value = function (...args: any[]) {
+//         console.log("Преди изпълнение на метода.");
+
+//         const result = originalMethod.apply(this, args);
+
+//         console.log("След изпълнение на метода.");
+
+//         return result;
+//     };
+// }
+
+// class MyClass {
+//     @myMethodDecorator
+//     myMethod() {
+//         console.log("Изпълнява се методът.");
+//         return "Резултат от метода";
+//     }
+// }
+
+// const instance = new MyClass();
+// const result = instance.myMethod();
+// console.log(result);
+
+
+
+
+
+
+
+
+
+
+// - Аксесорни декоратори
+// - Декоратори за свойства
+// - Декоратори за параметри
