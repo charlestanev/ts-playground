@@ -212,6 +212,55 @@
 
 
 
+
+
+
+
+
+
+// AccessorDecorators
+
+
+
+function myAccessorDecorator(
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+) {
+    console.log("Декораторът на аксесора е изпълнен.");
+
+    const originalGetter = descriptor.get;
+
+    descriptor.get = function () {
+        console.log("Изпълнява се getter.");
+
+        const result = originalGetter.call(this);
+
+        return result;
+    };
+}
+
+class MyClass {
+    private _myProperty: string = "Стойност";
+
+    @myAccessorDecorator
+    get myProperty(): string {
+        return this._myProperty;
+    }
+
+    set myProperty(value: string) {
+        this._myProperty = value;
+    }
+}
+
+const instance = new MyClass();
+
+console.log(instance.myProperty);
+
+
+
+
+
 // - Аксесорни декоратори
 // - Декоратори за свойства
 // - Декоратори за параметри
