@@ -90,6 +90,49 @@
 // (customer as any).greet();
 
 
+
+
+
+// // Задача 5:
+function myClassDecorator(constructor: Function) {
+    console.log('Декораторът на класа е изпълнен');
+    constructor.prototype.newProperty = 'Ново свойство';
+}
+
+@myClassDecorator
+class MyClass {
+    constructor() {
+        console.log('Конструкторът на класа е изпълнен');
+    }
+}
+
+const instance = new MyClass();
+console.log((instance as any).newProperty);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Задача 10
 // Условие:
 // Създайте декоратор, който при извикването на метод извежда съобщения
