@@ -259,30 +259,30 @@
 
 
 
-// Parameter Decorators
-// // // Задача 31
+// // Parameter Decorators
+// // // // Задача 31
 
-function myParameterDecorator(
-    target: any,
-    propertyKey: string,
-    parameterIndex: number
-) {
-    console.log("Декораторът на параметъра е изпълнен.");
+// function myParameterDecorator(
+//     target: any,
+//     propertyKey: string,
+//     parameterIndex: number
+// ) {
+//     console.log("Декораторът на параметъра е изпълнен.");
 
-    console.log(
-        `Параметър ${parameterIndex} на метод ${propertyKey} е декориран.`
-    );
-}
+//     console.log(
+//         `Параметър ${parameterIndex} на метод ${propertyKey} е декориран.`
+//     );
+// }
 
-class MyClass {
-    myMethod(
-        @myParameterDecorator arg1: string,
-        arg2: number
-    ) {
-        console.log("Изпълнява се методът.");
-    }
-}
+// class MyClass {
+//     myMethod(
+//         @myParameterDecorator arg1: string,
+//         arg2: number
+//     ) {
+//         console.log("Изпълнява се методът.");
+//     }
+// }
 
-const instance = new MyClass();
+// const instance = new MyClass();
 
-instance.myMethod("Стойност", 123);
+// instance.myMethod("Стойност", 123);
