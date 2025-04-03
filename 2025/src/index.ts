@@ -238,9 +238,89 @@
 // solve('A', 'B', 'C');
 
 
-function solve(a: string, b: string, c: string): void {
-    const result = [c, b, a].join(' ')
-    console.log(result);
-}
+// function solve(a: string, b: string, c: string): void {
+//     const result = [c, b, a].join(' ')
+//     console.log(result);
+// }
 
-solve('A', 'B', 'C');
+// solve('A', 'B', 'C');
+
+
+
+// function solve(char: string): void {
+//     char === char.toUpperCase()
+//         ? console.log('upper-case')
+//         : console.log('lower-case')
+// }
+
+// solve('b');
+
+
+// function calculator(num1: number, operator: string, num2: number): void {
+//     let result: number;
+
+//     switch (operator) {
+//         case '+':
+//             result = num1 + num2;
+//             break;
+//         case '-':
+//             result = num1 - num2;
+//             break;
+//         case '*':
+//             result = num1 * num2;
+//             break;
+//         case '/':
+//             result = num1 / num2;
+//             break;
+//         default:
+//             console.log('Invalid operator');
+//             return;
+//     }
+
+//     console.log(result.toFixed(2));
+// }
+
+// // Примерни тестове:
+// calculator(5, '+', 10);     // ➜ 15.00
+// calculator(25.5, '-', 3);   // ➜ 22.50
+// calculator(6, '*', 4);      // ➜ 24.00
+// calculator(10, '/', 3);     // ➜ 3.33
+
+
+// function biggest(a: number, b: number, c: number): void {
+//     let str = [a, b, c];
+//     let news = str.sort((a, b) => (b - a))
+//     console.log(news[0]);
+// }
+
+// biggest(-2, 7, 3);
+
+
+// function biggest(a: number, b: number, c: number): void {
+
+//     console.log(Math.max(a, b, c));
+// }
+
+// biggest(-2, 7, 3);       // ➜ 7
+// biggest(130, 5, 99);     // ➜ 130
+// biggest(43, 43.2, 43.1);
+
+
+// function biggest(num: number[]): void {
+//     console.log(num[0] + num[num.length - 1]);
+// }
+
+// biggest([11, 58, 69]);
+
+
+// function biggest(a: number, num: number[]): void {
+//     let newn = num
+//         .splice(0, a)
+//         .reverse()
+//         .join(' ');
+// }
+
+// biggest(2, [66, 43, 75, 89, 47]);
+// biggest(3, [10, 20, 30, 40, 50]);
+// biggest(4, [-1, 20, 99, 5]);
+
