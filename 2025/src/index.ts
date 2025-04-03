@@ -149,15 +149,33 @@
 
 // multiply(7)
 
-function multiply(num: number): void {
-    let line: string = '';
+// function multiply(num: number): void {
+//     let line: string = '';
 
-    for (let i = 1; i <= num; i++) {
-        for (let a = 1; a <= num; a++) {
-            line = `${i} x ${a} = ${i * a}`
-            console.log(line);
-        }
-    }
-}
+//     for (let i = 1; i <= num; i++) {
+//         for (let a = 1; a <= num; a++) {
+//             line = `${i} x ${a} = ${i * a}`
+//             console.log(line);
+//         }
+//     }
+// }
 
-multiply(3)
+// multiply(3)
+
+
+// function multiply(num: number): void {
+//     let row: number = 1;
+
+//     while (row <= num) {
+//         let col: number = 1;
+
+//         while (col <= num) {
+//             const result = row * col;
+//             console.log(`${row} x ${col} = ${result}`);
+//             col++;
+//         }
+//         row++
+//     }
+// }
+
+// multiply(10)
