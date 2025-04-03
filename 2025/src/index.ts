@@ -209,3 +209,38 @@
 // sumDigitsReduce(245678)
 // sumDigitsReduce(97561) // ➜ 28
 // sumDigitsReduce(543)   // ➜ 12
+
+
+// function solve(a: string, b: string, c: string): void {
+//     let str: string[] = [];
+//     str.push(a, b, c)
+//     let newStr = str.join('')
+//     console.log(typeof newStr);
+// }
+
+// solve('a', 'b', 'c')
+
+
+// function solve(a: string, b: string, c: string): void {
+//     const result = a + b + c;
+//     console.log(result);
+// }
+
+// solve('a', 'b', 'c')
+
+
+// function solve(a: string, b: string, c: string): void {
+//     const result = a + b + c;
+//     let newresult = result.split('').reverse().join(' ');
+//     console.log(newresult);
+// }
+
+// solve('A', 'B', 'C');
+
+
+function solve(a: string, b: string, c: string): void {
+    const result = [c, b, a].join(' ')
+    console.log(result);
+}
+
+solve('A', 'B', 'C');
