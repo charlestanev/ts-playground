@@ -242,6 +242,10 @@
 //     const result = [c, b, a].join(' ')
 //     console.log(result);
 // }
+// function solve(a: string, b: string, c: string): void {
+//     const result = [c, b, a].join(' ')
+//     console.log(result);
+// }
 
 // solve('A', 'B', 'C');
 
