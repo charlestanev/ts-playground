@@ -324,3 +324,26 @@
 // biggest(3, [10, 20, 30, 40, 50]);
 // biggest(4, [-1, 20, 99, 5]);
 
+
+
+// function biggest(str: string[]): number {
+//     let newStr = str
+//         .map(Number)
+//         .filter(x => x % 2 === 0)
+//         .reduce((acc, cur) => acc + cur)
+//     return (newStr)
+// }
+// console.log(biggest(['1', '2', '3', '4', '5', '6']));
+// console.log(biggest(['2', '4', '6', '8', '10']));
+
+
+
+function biggest(str: string[]): number {
+    let newStr = str
+        .map(Number)
+        .filter(x => x % 2 === 0)
+        .reduce((acc, cur) => acc + cur)
+    return (newStr)
+}
+console.log(biggest(['1', '2', '3', '4', '5', '6']));
+console.log(biggest(['2', '4', '6', '8', '10']));
