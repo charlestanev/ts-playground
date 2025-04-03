@@ -115,3 +115,49 @@
 
 // console.log(oddNumbers(5));
 
+// function printSum(a: number, b: number): void {
+//     let sum: number = 0;
+
+//     for (let i = a; i <= b; i++) {
+//         sum += i;
+//     }
+//     console.log(sum);
+
+// }
+// printSum(5, 10)
+// printSum(2, 26)
+// printSum(50, 60)
+// printSum(1, 100)
+
+// function triangle(n: number): void {
+//     for (let i = 0; i < n; i++) {
+//         let line: string = ''
+//         for (let a = 0; a < i; a++) {
+//             line += ` ${a}`
+//         }
+//         console.log(line);
+//     }
+// }
+
+// triangle(10)
+
+// function multiply(num: number): void {
+//     for (let i = 1; i <= 10; i++) {
+//         console.log(`${num} X ${i} = ${num * i}`);
+//     }
+// }
+
+// multiply(7)
+
+function multiply(num: number): void {
+    let line: string = '';
+
+    for (let i = 1; i <= num; i++) {
+        for (let a = 1; a <= num; a++) {
+            line = `${i} x ${a} = ${i * a}`
+            console.log(line);
+        }
+    }
+}
+
+multiply(3)
