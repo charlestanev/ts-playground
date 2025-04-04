@@ -362,21 +362,21 @@
 
 
 
-function biggest(first: string[], second: string[]): void {
-    let sum: number = 0;
-    let diff: number = -1;
+// function biggest(first: string[], second: string[]): void {
+//     let sum: number = 0;
+//     let diff: number = -1;
 
-    first.map((x, i) =>
-        x === second[i]
-            ? sum += Number(x)
-            : diff = i
-    )
+//     first.map((x, i) =>
+//         x === second[i]
+//             ? sum += Number(x)
+//             : diff = i
+//     )
 
-    diff === -1
-        ? console.log('Arrays are identical. Sum: ' + sum)
-        : console.log(`Arrays are not identical. Found difference at ${diff} index`)
-}
+//     diff === -1
+//         ? console.log('Arrays are identical. Sum: ' + sum)
+//         : console.log(`Arrays are not identical. Found difference at ${diff} index`)
+// }
 
-biggest(['10', '20', '30'], ['10', '20', '30']);
-biggest(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
-biggest(['1'], ['10']);
+// biggest(['10', '20', '30'], ['10', '20', '30']);
+// biggest(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
+// biggest(['1'], ['10']);
