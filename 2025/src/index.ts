@@ -365,10 +365,11 @@
 function biggest(first: string[], second: string[]): void {
     let sum: number = 0;
     let diff: number = -1;
-    first.map(
-        (x, i) => x.includes(second[i])
+
+    first.map((x, i) =>
+        x === second[i]
             ? sum += Number(x)
-            : diff += Number(x)
+            : diff = i
     )
 
     diff === -1
