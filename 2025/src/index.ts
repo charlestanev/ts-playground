@@ -381,20 +381,42 @@
 // biggest(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
 // biggest(['1'], ['10']);
 
-function solve(arr: number[]): void {
+// function solve(arr: number[]): void {
 
-    let newArr = [];
+//     let newArr = [];
 
-    arr.map((x, i) => {
-        x % 2 === 0 ? newArr.push(x += i) : newArr.push(x -= i)
-    })
+//     arr.map((x, i) => {
+//         x % 2 === 0 ? newArr.push(x += i) : newArr.push(x -= i)
+//     })
 
-    let sumOriginal = arr.reduce((prev, curr) => prev + curr)
-    let newArrSum = newArr.reduce((x, i) => x + i)
-    console.log(newArr);
-    console.log(sumOriginal);
-    console.log(newArrSum);
-}
+//     let sumOriginal = arr.reduce((prev, curr) => prev + curr)
+//     let newArrSum = newArr.reduce((x, i) => x + i)
+//     console.log(newArr);
+//     console.log(sumOriginal);
+//     console.log(newArrSum);
+// }
 
-solve([5, 15, 23, 56, 35])
-solve([-5, 11, 3, 0, 2])
+// solve([5, 15, 23, 56, 35])
+// solve([-5, 11, 3, 0, 2])
+
+
+
+// function solve(
+//     arr1: (string | number)[],
+//     arr2: (string | number)[]
+// ): void {
+//     arr1.forEach(x => {
+//         if (arr2.includes(x)) {
+//             console.log(x);
+//         }
+//     })
+// }
+
+
+// solve(['Hey', 'hello', 2, 4, 'Peter', 'e'],
+//     ['Petar', 10, 'hey', 4, 'hello', '2']
+// )
+
+// solve(['S', 'o', 'f', 't', 'U', 'n', 'i', ' '],
+//     ['s', 'o', 'c', 'i', 'a', 'l']
+// )
