@@ -420,3 +420,26 @@
 // solve(['S', 'o', 'f', 't', 'U', 'n', 'i', ' '],
 //     ['s', 'o', 'c', 'i', 'a', 'l']
 // )
+
+
+function solve(
+    arr1: string[],
+    arr2: string[]
+): void {
+    let newArr = [];
+    arr1.map((x, i) => {
+        i % 2 === 0
+            ? (newArr.push(Number(x) + Number(arr2[i])))
+            : (newArr.push(x + arr2[i]))
+    })
+    console.log(newArr.join('-'));
+}
+
+
+solve(['5', '15', '23', '56', '35'],
+    ['17', '22', '87', '36', '11']
+)
+
+solve(['13', '12312', '5', '77', '4'],
+    ['22', '333', '5', '122', '44']
+)
