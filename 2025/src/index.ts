@@ -342,12 +342,40 @@
 
 
 
-function biggest(str: string[]): number {
-    let newStr = str
-        .map(Number)
-        .filter(x => x % 2 === 0)
-        .reduce((acc, cur) => acc + cur)
-    return (newStr)
+// function biggest(nums: number[]): void {
+
+//     let notOdd = nums
+//         .filter(x => x % 2 === 0)
+//         .reduce((acc, cur) => acc + cur, 0)
+
+//     let odd = nums
+//         .filter(x => x % 2 != 0)
+//         .reduce((acc, cur) => acc + cur, 0)
+
+//     console.log(notOdd - odd);
+// }
+
+// biggest([1, 2, 3, 4, 5, 6])
+// biggest([3, 5, 7, 9])
+// biggest([2, 4, 6, 8, 10])
+
+
+
+
+function biggest(first: string[], second: string[]): void {
+    let sum: number = 0;
+    let diff: number = -1;
+    first.map(
+        (x, i) => x.includes(second[i])
+            ? sum += Number(x)
+            : diff += Number(x)
+    )
+
+    diff === -1
+        ? console.log('Arrays are identical. Sum: ' + sum)
+        : console.log(`Arrays are not identical. Found difference at ${diff} index`)
 }
-console.log(biggest(['1', '2', '3', '4', '5', '6']));
-console.log(biggest(['2', '4', '6', '8', '10']));
+
+biggest(['10', '20', '30'], ['10', '20', '30']);
+biggest(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
+biggest(['1'], ['10']);
