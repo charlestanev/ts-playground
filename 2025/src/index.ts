@@ -422,24 +422,70 @@
 // )
 
 
+// function solve(
+//     arr1: string[],
+//     arr2: string[]
+// ): void {
+//     let newArr = [];
+//     arr1.map((x, i) => {
+//         i % 2 === 0
+//             ? (newArr.push(Number(x) + Number(arr2[i])))
+//             : (newArr.push(x + arr2[i]))
+//     })
+//     console.log(newArr.join('-'));
+// }
+
+
+// solve(['5', '15', '23', '56', '35'],
+//     ['17', '22', '87', '36', '11']
+// )
+
+// solve(['13', '12312', '5', '77', '4'],
+//     ['22', '333', '5', '122', '44']
+// )
+
+
+// function solve(
+//     arr1: number[],
+//     num: number
+// ): void {
+//     let newArr = [];
+
+//     // for (let index = 0; index < num; index++) {
+//     //     let el = arr1.shift()
+//     //     arr1.push(el)
+//     // }
+
+//     Array.from({ length: num }, () => {
+//         arr1.push(arr1.shift())
+//     })
+
+//     console.log(arr1.join(' '));
+
+// }
+
+
+// solve([51, 47, 32, 61, 21], 2)
+
+// solve([32, 21, 61, 1], 4)
+
+// solve([2, 4, 15, 31], 5)
+
+
+
 function solve(
-    arr1: string[],
-    arr2: string[]
+    arr1: number[],
+    num: number
 ): void {
     let newArr = [];
-    arr1.map((x, i) => {
-        i % 2 === 0
-            ? (newArr.push(Number(x) + Number(arr2[i])))
-            : (newArr.push(x + arr2[i]))
-    })
-    console.log(newArr.join('-'));
+
+
+
 }
 
 
-solve(['5', '15', '23', '56', '35'],
-    ['17', '22', '87', '36', '11']
-)
+solve([51, 47, 32, 61, 21], 2)
 
-solve(['13', '12312', '5', '77', '4'],
-    ['22', '333', '5', '122', '44']
-)
+solve([32, 21, 61, 1], 4)
+
+solve([2, 4, 15, 31], 5)
