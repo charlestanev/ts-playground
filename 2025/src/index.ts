@@ -474,18 +474,26 @@
 
 
 function solve(
-    arr1: number[],
-    num: number
+    arr: number[],
 ): void {
     let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let comparable = arr[i];
 
+        let elementsToCompare = arr.slice(i + 1);
 
+        let maxToRight = Math.max(...elementsToCompare);
 
+        comparable > maxToRight && (newArr.push(comparable))
+    }
+    console.log(newArr.join(' '));
 }
 
 
-solve([51, 47, 32, 61, 21], 2)
+solve([1, 4, 3, 2])
 
-solve([32, 21, 61, 1], 4)
+solve([14, 24, 3, 19, 15, 17])
 
-solve([2, 4, 15, 31], 5)
+solve([41, 41, 34, 20])
+
+solve([27, 19, 42, 2, 13, 45, 48])
