@@ -362,7 +362,7 @@
 
 
 
-// function biggest(first: string[], second: string[]): void {
+// function equalArrays(first: string[], second: string[]): void {
 //     let sum: number = 0;
 //     let diff: number = -1;
 
@@ -377,9 +377,9 @@
 //         : console.log(`Arrays are not identical. Found difference at ${diff} index`)
 // }
 
-// biggest(['10', '20', '30'], ['10', '20', '30']);
-// biggest(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
-// biggest(['1'], ['10']);
+// equalArrays(['10','20','30'], ['10','20','30']);
+// equalArrays(['1','2','3','4','5'], ['1','2','4','4','5']);
+// equalArrays(['1'], ['10']);
 
 // function solve(arr: number[]): void {
 
@@ -473,27 +473,48 @@
 
 
 
-function solve(
-    arr: number[],
-): void {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        let comparable = arr[i];
+// function solve(
+//     arr: number[],
+// ): void {
+//     let newArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         let comparable = arr[i];
 
-        let elementsToCompare = arr.slice(i + 1);
+//         let elementsToCompare = arr.slice(i + 1);
 
-        let maxToRight = Math.max(...elementsToCompare);
+//         let maxToRight = Math.max(...elementsToCompare);
 
-        comparable > maxToRight && (newArr.push(comparable))
-    }
-    console.log(newArr.join(' '));
+//         comparable > maxToRight && (newArr.push(comparable))
+//     }
+//     console.log(newArr.join(' '));
+// }
+
+
+// solve([1, 4, 3, 2])
+
+// solve([14, 24, 3, 19, 15, 17])
+
+// solve([41, 41, 34, 20])
+
+// solve([27, 19, 42, 2, 13, 45, 48])
+
+
+
+// function RepeatString(str: string, num: number): string {
+//     let newStr: string = '';
+//     for (let i = 0; i < num; i++) {
+//         newStr += str
+//     }
+//     return newStr
+// }
+
+// console.log(RepeatString('abc', 3));
+// console.log(RepeatString('String', 2));
+
+
+function mathPower(a: number, b: number): number {
+    return (Math.pow(a, b))
 }
 
-
-solve([1, 4, 3, 2])
-
-solve([14, 24, 3, 19, 15, 17])
-
-solve([41, 41, 34, 20])
-
-solve([27, 19, 42, 2, 13, 45, 48])
+console.log(mathPower(2, 8));
+console.log(mathPower(3, 4));
