@@ -512,9 +512,245 @@
 // console.log(RepeatString('String', 2));
 
 
-function mathPower(a: number, b: number): number {
-    return (Math.pow(a, b))
+// function mathPower(a: number, b: number): number {
+//     return (Math.pow(a, b))
+// }
+
+// console.log(mathPower(2, 8));
+// console.log(mathPower(3, 4));
+
+
+
+
+// function orders(a: string, b: number): void {
+//     switch (a) {
+//         case 'water':
+
+//             let num = (b * 1).toFixed(2)
+
+//             console.log(num);
+
+
+//             break;
+
+//         default:
+//             break;
+//     }
+// }
+
+// orders('water', 5);
+
+
+// function SimpleCalculator(num1: number, num2: number, command: string): number {
+//     switch (command) {
+//         case ('multiply'):
+//             return num1 * num2
+//             break;
+//         case ('divide'):
+//             return num1 / num2
+//             break;
+//         case ('add'):
+//             return num1 + num2
+//             break;
+//         case ('subtract'):
+//             return num1 - num2
+//             break;
+//         default:
+//             return
+//     }
+// }
+
+// console.log(SimpleCalculator(5, 5, 'multiply'));
+// console.log(SimpleCalculator(40, 8, 'divide'));
+// console.log(SimpleCalculator(12, 19, 'add'));
+// console.log(SimpleCalculator(50, 13, 'subtract'));
+
+// Exercise: Functions
+// function SmallestofThreeNumbers(a: number, b: number, c: number): number {
+//     return Math.min(a, b, c)
+// }
+
+// console.log(SmallestofThreeNumbers(2, 5, 3));
+// console.log(SmallestofThreeNumbers(600, 342, 123));
+// console.log(SmallestofThreeNumbers(25, 21, 4));
+
+// function AddandSubtract(a: number, b: number, c: number): number {
+//     return (a + b) - c
+// }
+
+// console.log(AddandSubtract(23, 6, 10));
+// console.log(AddandSubtract(1, 17, 30));
+// console.log(AddandSubtract(42, 58, 100));
+
+
+
+// function charactersInRange(a: string, b: string): void {
+//     const code1 = a.charCodeAt(0)
+//     const code2 = b.charCodeAt(0)
+
+//     const start = Math.min(code1, code2) + 1;
+//     const end = Math.max(code1, code2)
+
+//     let result: string[] = [];
+
+//     for (let i = start; i < end; i++) {
+//         result.push(String.fromCharCode(i));
+//     }
+
+//     console.log(result.join(' '));
+// }
+
+// charactersInRange('a', 'd');
+// // ➜ b c
+
+// charactersInRange('#', ':');
+// // ➜ $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9
+
+// charactersInRange('C', '#');
+// // ➜ $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B
+
+
+
+// function OddAndEvenSum(num: number): void {
+//     let arrayNums = num.toString().split('');
+
+//     let oddNums: number[] = [];
+//     let evenNums: number[] = [];
+
+//     arrayNums.map(x => {
+//         Number(x) % 2 === 0
+//             ? evenNums.push(Number(x))
+//             : oddNums.push(Number(x))
+//     })
+
+//     let newOdds = oddNums.reduce((a, t) => a + t, 0)
+//     let newEven = evenNums.reduce((a, t) => a + t, 0)
+
+//     console.log(`Odd sum = ${newOdds}, Even sum = ${newEven}`);
+
+// }
+
+// OddAndEvenSum(1000435);
+// OddAndEvenSum(3495892137259234);
+
+
+
+
+
+
+
+// function palindromeIntegers(arr: number[]): boolean[] {
+//     let strArr = arr.map(x => x.toString())
+//     let result: boolean[] = [];
+
+//     strArr.map(x => {
+//         let reversed = x.split('').reverse().join('');
+//         x === reversed
+//             ? result.push(true)
+//             : result.push(false)
+//     })
+
+//     return result;
+// }
+
+// console.log(palindromeIntegers([123, 323, 421, 121]));
+// console.log(palindromeIntegers([32, 2, 232, 1010]));
+
+
+
+
+// Typescrypt
+
+
+// Lab: Introduction to TypeScript
+
+// interface Rectangle {
+//     lenght: number;
+//     width: number;
+// }
+
+// class RectangleAreaCalculator {
+//     private rectangle: Rectangle;
+
+//     constructor(lenght: number, width: number) {
+//         this.rectangle = {
+//             lenght: lenght,
+//             width: width
+//         }
+//     }
+
+//     public calculateArea(): number {
+//         return this.rectangle.lenght * this.rectangle.width;
+//     }
+
+//     public printArea(): void {
+//         console.log(this.calculateArea());
+//     }
+// }
+
+// const myRectangle = new RectangleAreaCalculator(5, 7);
+// myRectangle.printArea();
+
+
+// interface LargestNumber {
+//     a: number,
+//     b: number,
+//     c: number
+// }
+// class CalculateLargest {
+//     private largest: LargestNumber;
+
+//     constructor(first: number, second: number, third: number) {
+//         this.largest = {
+//             a: first,
+//             b: second,
+//             c: third
+//         }
+//     }
+
+//     public calculateLargest(): number {
+//         return Math.max(this.largest.a, this.largest.b, this.largest.c)
+//     }
+
+//     public printLargest(): void {
+//         console.log(`The largest number is ${this.calculateLargest()}.`);
+//     }
+// }
+
+// const largest = new CalculateLargest(5, -3, 16);
+// const largest2 = new CalculateLargest(-3, -5, -22.5);
+
+// largest.printLargest();
+// largest2.printLargest();
+
+interface ISummer {
+    printSum(): void;
 }
 
-console.log(mathPower(2, 8));
-console.log(mathPower(3, 4));
+class RangeSummer implements ISummer {
+    private start: number;
+    private end: number;
+
+    constructor(start: string, end: string) {
+        this.start = Number(start);
+        this.end = Number(end);
+    }
+
+    public calculateSum(): number {
+        let sum: number = 0;
+        for (let i = this.start; i <= this.end; i++) {
+            sum += i
+        }
+        return sum
+    }
+
+    public printSum(): void {
+        console.log(this.calculateSum());
+    }
+}
+
+const example1 = new RangeSummer('1', '5');
+example1.printSum();
+
+const example2 = new RangeSummer('-8', '20');
+example2.printSum();
