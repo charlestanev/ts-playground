@@ -656,6 +656,73 @@
 // console.log(palindromeIntegers([123, 323, 421, 121]));
 // console.log(palindromeIntegers([32, 2, 232, 1010]));
 
+// // Password Validator
+// function passwordValidator(password: string): void {
+//     let nums: number = 0;
+//     let isItLettersNums: boolean = true;
+
+//     let checkp = password.split('');
+
+//     checkp.forEach(x => {
+//         if (!isNaN(Number(x))) {
+//             nums += 1;
+//         }
+
+//         let code = x.charCodeAt(0);
+//         if (
+//             !(code >= 48 && code <= 57) &&
+//             !(code >= 65 && code <= 90) &&
+//             !(code >= 97 && code <= 122)
+//         ) {
+//             isItLettersNums = false;
+//         }
+//     });
+
+//     let isValid = true;
+
+//     if (password.length < 6 || password.length > 10) {
+//         console.log('Password must be between 6 and 10 characters');
+//         isValid = false;
+//     }
+
+//     if (!isItLettersNums) {
+//         console.log('Password must consist only of letters and digits');
+//         isValid = false;
+//     }
+
+//     if (nums < 2) {
+//         console.log('Password must have at least 2 digits');
+//         isValid = false;
+//     }
+
+//     if (isValid) {
+//         console.log('Password is valid');
+//     }
+// }
+
+// passwordValidator('logIn');
+// // ➜ Password must be between 6 and 10 characters
+// // ➜ Password must have at least 2 digits
+
+// passwordValidator('MyPass123');
+// // ➜ Password is valid
+
+// passwordValidator('Pa$s$s');
+// // ➜ Password must consist only of letters and digits
+// // ➜ Password must have at least 2 digits
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -723,34 +790,34 @@
 // largest.printLargest();
 // largest2.printLargest();
 
-interface ISummer {
-    printSum(): void;
-}
+// interface ISummer {
+//     printSum(): void;
+// }
 
-class RangeSummer implements ISummer {
-    private start: number;
-    private end: number;
+// class RangeSummer implements ISummer {
+//     private start: number;
+//     private end: number;
 
-    constructor(start: string, end: string) {
-        this.start = Number(start);
-        this.end = Number(end);
-    }
+//     constructor(start: string, end: string) {
+//         this.start = Number(start);
+//         this.end = Number(end);
+//     }
 
-    public calculateSum(): number {
-        let sum: number = 0;
-        for (let i = this.start; i <= this.end; i++) {
-            sum += i
-        }
-        return sum
-    }
+//     public calculateSum(): number {
+//         let sum: number = 0;
+//         for (let i = this.start; i <= this.end; i++) {
+//             sum += i
+//         }
+//         return sum
+//     }
 
-    public printSum(): void {
-        console.log(this.calculateSum());
-    }
-}
+//     public printSum(): void {
+//         console.log(this.calculateSum());
+//     }
+// }
 
-const example1 = new RangeSummer('1', '5');
-example1.printSum();
+// const example1 = new RangeSummer('1', '5');
+// example1.printSum();
 
-const example2 = new RangeSummer('-8', '20');
-example2.printSum();
+// const example2 = new RangeSummer('-8', '20');
+// example2.printSum();
