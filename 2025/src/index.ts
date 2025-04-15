@@ -712,10 +712,23 @@
 // // ➜ Password must have at least 2 digits
 
 
+// function matrix(num: number): void {
+//     // let x: number[] = [];
+//     const x = Array(num).fill(num)
+//     // for (let i = 1; i <= num; i++) {
+//     //     x.push(num)
+//     // }
+//     for (let l = 1; l <= num; l++) {
+//         console.log(x.join(' '));
+//     }
 
+// }
 
+// matrix(3);
+// matrix(7);
+// matrix(2);
 
-
+// tuk
 
 
 
@@ -821,3 +834,14 @@
 
 // const example2 = new RangeSummer('-8', '20');
 // example2.printSum();
+
+// 4.	Day of Week
+
+interface IDayToNumberConverter {
+    printDayNumber(day: string): void;
+}
+
+class DayOfWeekConverter implements IDayToNumberConverter {
+    private days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+}
