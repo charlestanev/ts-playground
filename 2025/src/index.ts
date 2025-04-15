@@ -837,11 +837,36 @@
 
 // 4.	Day of Week
 
-interface IDayToNumberConverter {
-    printDayNumber(day: string): void;
-}
+// interface IDayToNumberConverter {
+//     printDayNumber(day: string): void;
+// }
 
-class DayOfWeekConverter implements IDayToNumberConverter {
-    private days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+// class DayOfWeekConverter implements IDayToNumberConverter {
+//     private days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-}
+//     public printDayNumber(day: string): void {
+//         // let print: string[] = [];
+//         // if (this.days.includes(day)) {
+//         //     print.push((this.days.indexOf(day) + 1).toString())
+//         // } else {
+//         //     print.push('error')
+//         // }
+//         // console.log(print.join(''));
+
+//         const index = this.days.indexOf(day);
+//         index === -1
+//             ? console.log('error')
+//             : console.log(index + 1)
+//     }
+// }
+
+// const converter = new DayOfWeekConverter();
+
+// // Пример 1: валиден ден
+// converter.printDayNumber('Monday'); // Очакваме: 1
+
+// // Пример 2: друг валиден ден
+// converter.printDayNumber('Friday'); // Очакваме: 5
+
+// // Пример 3: невалиден вход
+// converter.printDayNumber('Invalid'); // Очакваме: error
