@@ -730,6 +730,64 @@
 
 
 
+// function isPerfectNumber(n: number): void {
+//     let sum = 0;
+
+//     for (let i = 1; i < n; i++) {
+//         if (n % i === 0) {
+//             sum += i;
+//         }
+//     }
+
+//     if (sum === n) {
+//         console.log("We have a perfect number!");
+//     } else {
+//         console.log("It's not so perfect.");
+//     }
+
+// }
+
+
+// isPerfectNumber(6);        // 👉 We have a perfect number!
+// isPerfectNumber(28);       // 👉 We have a perfect number!
+// isPerfectNumber(1236498);  // 👉 It's not so perfect.
+
+
+
+// function loadingBar(progress: number): void {
+//     let percents: number = progress / 10;
+
+//     let left = Array(percents).fill('%');
+//     let right = Array(10 - percents).fill('.');
+//     console.log(`${progress} [${left.concat(right).join('')}]`);
+
+//     percents === 10
+//         ? console.log(`[${left.concat(right).join('')}]`)
+//         : console.log('Still loading...')
+
+//     console.log('\n');
+// }
+
+// loadingBar(30);
+// // 👉 30% [%%%.......]
+// // 👉 Still loading...
+
+// loadingBar(50);
+// // 👉 50% [%%%%%.....]
+// // 👉 Still loading...
+
+// loadingBar(100);
+// // 👉 100% Complete!
+// // 👉 [%%%%%%%%%%]
+
+
+
+
+
+
+
+
+
 // // 3.	Equal Sums
 // function equalSums(arr: number[]): void {
 //     for (let i = 0; i < arr.length; i++) {
