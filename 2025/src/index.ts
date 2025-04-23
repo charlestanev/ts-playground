@@ -728,6 +728,29 @@
 // matrix(7);
 // matrix(2);
 
+
+
+// 3.	Equal Sums
+function equalSums(arr: number[]): void {
+    for (let i = 0; i < arr.length; i++) {
+        let leftSum = arr.slice(0, i).reduce((a, b) => a + b, 0);
+        let rightSum = arr.slice(i + 1).reduce((a, b) => a + b, 0);
+
+        leftSum === rightSum && console.log(i); return
+
+    }
+    console.log('no');
+
+}
+
+equalSums([1, 2, 3, 3]);
+equalSums([1, 2]);
+equalSums([1]);
+equalSums([1, 2, 3]);
+equalSums([10, 5, 5, 99, 3, 4, 2, 5, 1, 1, 4]);
+
+
+
 // tuk
 
 
