@@ -730,25 +730,55 @@
 
 
 
-// 3.	Equal Sums
-function equalSums(arr: number[]): void {
-    for (let i = 0; i < arr.length; i++) {
-        let leftSum = arr.slice(0, i).reduce((a, b) => a + b, 0);
-        let rightSum = arr.slice(i + 1).reduce((a, b) => a + b, 0);
+// // 3.	Equal Sums
+// function equalSums(arr: number[]): void {
+//     for (let i = 0; i < arr.length; i++) {
+//         let leftSum = arr.slice(0, i).reduce((a, b) => a + b, 0);
+//         let rightSum = arr.slice(i + 1).reduce((a, b) => a + b, 0);
 
-        leftSum === rightSum && console.log(i); return
+//         if (leftSum === rightSum) {
+//             console.log(i);
+//             return
+//         }
+//     }
+//     console.log('no');
+// }
 
-    }
-    console.log('no');
+// equalSums([1, 2, 3, 3]);
+// equalSums([1, 2]);
+// equalSums([1]);
+// equalSums([1, 2, 3]);
+// equalSums([10, 5, 5, 99, 3, 4, 2, 5, 1, 1, 4]);
 
-}
 
-equalSums([1, 2, 3, 3]);
-equalSums([1, 2]);
-equalSums([1]);
-equalSums([1, 2, 3]);
-equalSums([10, 5, 5, 99, 3, 4, 2, 5, 1, 1, 4]);
+// // 3.	Max Sequence of Equal Elements
+// function maxSequence(arr: number[]): void {
+//     let maxCount = 1;
+//     let maxElement = arr[0];
 
+//     let currentCount = 1;
+
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] === arr[i - 1]) {
+//             currentCount++;
+//         } else {
+//             currentCount = 1;
+//         }
+
+//         if (currentCount > maxCount) {
+//             maxCount = currentCount;
+//             maxElement = arr[i]
+//         }
+//     }
+//     console.log(Array(maxCount).fill(maxElement).join(' '));
+
+// }
+
+
+// maxSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1]);  // 👉 2 2 2
+// maxSequence([1, 1, 1, 2, 3, 1, 3, 3]);        // 👉 1 1 1
+// maxSequence([4, 4, 4, 4]);                    // 👉 4 4 4 4
+// maxSequence([0, 1, 1, 5, 2, 2, 6, 3, 3]);     // 👉 1 1
 
 
 // tuk
