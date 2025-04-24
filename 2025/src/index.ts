@@ -1009,3 +1009,46 @@
 
 // // Пример 3: невалиден вход
 // converter.printDayNumber('Invalid'); // Очакваме: error
+
+// function carWash(commands: string[]): void {
+//     let sum: number = 0;
+
+//     for (const command of commands) {
+//         switch (command) {
+//             case 'soap':
+//                 sum += 10;
+//                 break;
+//             case 'water':
+//                 sum *= 1.2;
+//                 break;
+//             case 'vacuum cleaner':
+//                 sum *= 1.25;
+//                 break;
+//             case 'mud':
+//                 sum *= 0.9;
+//                 break;
+//         }
+//     }
+
+//     console.log(`The car is ${sum.toFixed(2)}% clean.`);
+// }
+
+// carWash(['soap', 'soap', 'vacuum cleaner', 'mud', 'soap', 'water']);
+// // 👉 The car is 39.00% clean.
+
+// // Number Modification
+// function NumberModification(num: number): void {
+//     let numArray = num.toString().split('').map(Number);
+//     let average = 0;
+
+//     while (average <= 5) {
+//         average = ((numArray.reduce((prev, curr) => prev + curr)) / (numArray.length))
+//         average <= 5 && numArray.push(9);
+
+//     }
+//     console.log(numArray);
+
+// }
+
+// NumberModification(101);
+// NumberModification(5835);
