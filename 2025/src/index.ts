@@ -1052,3 +1052,25 @@
 
 // NumberModification(101);
 // NumberModification(5835);
+
+
+
+// A perfect number is a positive integer that is equal to the sum of 
+// its proper positive divisors, that is, the sum of its positive 
+// divisors excluding the number itself(also known as its aliquot sum).
+//     Equivalently, a perfect number is a number that is half the sum of all
+// its positive divisors(including itself).Write a method that prints 
+// the first 4 perfect numbers.
+// Perfect Number Example
+// 6 = 1 + 2 + 3
+
+function perfectNum(num: number): boolean {
+    let sum = 0;
+    for (let i = 0; i <= num/2; i++) {
+        const element = array[i];
+        
+    }
+
+}
+
+perfectNum(6)
