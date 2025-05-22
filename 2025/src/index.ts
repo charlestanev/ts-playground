@@ -1054,23 +1054,52 @@
 // NumberModification(5835);
 
 
+// // 1.	Sum First and Last
+// function sum(arr: string[]): number {
+//     let first = Number(arr.shift());
+//     let last = Number(arr.pop());
 
-// A perfect number is a positive integer that is equal to the sum of 
-// its proper positive divisors, that is, the sum of its positive 
-// divisors excluding the number itself(also known as its aliquot sum).
-//     Equivalently, a perfect number is a number that is half the sum of all
-// its positive divisors(including itself).Write a method that prints 
-// the first 4 perfect numbers.
-// Perfect Number Example
-// 6 = 1 + 2 + 3
+//     return first + last
+// }
 
-function perfectNum(num: number): boolean {
-    let sum = 0;
-    for (let i = 0; i <= num/2; i++) {
-        const element = array[i];
-        
-    }
+// console.log(sum(['20', '30', '40'])); // 👉 60
+// console.log(sum(['5', '10']));        // 👉 15
+// console.log(sum(['7']));
 
-}
+// // 2.	Negative or Positive Numbers
+// function reorderNumbers(arr: number[]): void {
+//     let result: number[] = [];
 
-perfectNum(6)
+//     for (const i of arr) {
+//         i >= 0
+//             ? result.push(i)
+//             : result.unshift(i)
+//     }
+
+//     for (const i of result) {
+//         console.log(i);
+//     }
+//     console.log('\n');
+
+// }
+
+// reorderNumbers([7, -2, 8, 9]);
+// reorderNumbers([3, -2, 0, -1]);
+
+// // 3.	First and Last K Numbers
+// function firstAndLastK(arr: number[]): void {
+//     const k = arr.shift();
+
+//     const first = arr.slice(0, k);
+//     const last = arr.slice(-k);
+
+
+//     console.log(first.join(' '));
+//     console.log(last.join(' '));
+
+// }
+// firstAndLastK([2, 7, 8, 9]);
+
+// firstAndLastK([3, 6, 7, 8, 9]);
+
+
