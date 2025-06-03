@@ -1211,26 +1211,184 @@
 // sumEvenNumbers(['2', '4', '6', '8', '10']);
 // // Output: 30
 
-function evenAndOddSubtraction(arr: number[]): void {
+// function evenAndOddSubtraction(arr: number[]): void {
 
-  let evenSum: number = 0;
-  let oddSum: number = 0;
+//   let evenSum: number = 0;
+//   let oddSum: number = 0;
 
-  arr.forEach(x => {
-    x % 2 === 0
-      ? evenSum += x
-      : oddSum += x
-  })
+//   arr.forEach(x => {
+//     x % 2 === 0
+//       ? evenSum += x
+//       : oddSum += x
+//   })
 
-  console.log(evenSum - oddSum);
+//   console.log(evenSum - oddSum);
 
-}
+// }
 
-evenAndOddSubtraction([1, 2, 3, 4, 5, 6]);
-// Output: 3 (12 - 9)
+// evenAndOddSubtraction([1, 2, 3, 4, 5, 6]);
+// // Output: 3 (12 - 9)
 
-evenAndOddSubtraction([3, 5, 7, 9]);
-// Output: -24 (0 - 24)
+// evenAndOddSubtraction([3, 5, 7, 9]);
+// // Output: -24 (0 - 24)
 
-evenAndOddSubtraction([2, 4, 6, 8, 10]);
-// Output: 30 (30 - 0)
+// evenAndOddSubtraction([2, 4, 6, 8, 10]);
+// // Output: 30 (30 - 0)
+
+
+
+// // 7. Equal Arrays
+// function equalArrays(arr1: string[], arr2: string[]): void {
+//   const nums1: number[] = arr1.map(Number);
+//   const nums2: number[] = arr2.map(Number);
+
+//   if (nums1.length !== nums2.length) {
+//     console.log('Arrays are not identical. Found difference at length mismatch.');
+//     return;
+//   }
+
+//   for (let i = 0; i < nums1.length; i++) {
+//     if (nums1[i] !== nums2[i]) {
+//       console.log(`Arrays are not identical. Found difference at ${i} index`);
+//       return;
+//     }
+//   }
+
+//   const sum = nums1.reduce((a, b) => a + b, 0);
+//   console.log(`Arrays are identical. Sum: ${sum}`);
+
+// }
+
+// equalArrays(['10', '20', '30'], ['10', '20', '30']);
+// // Output: Arrays are identical. Sum: 60
+
+// equalArrays(['1', '2', '3', '4', '5'], ['1', '2', '4', '4', '5']);
+// // Output: Arrays are not identical. Found difference at 2 index
+
+// equalArrays(['1'], ['10']);
+// equalArrays(['1'], ['10', '10']);
+// // Output: Arrays are not identical. Found difference at 0 index
+
+
+
+// // 8. Condense Array to Number
+// function condenseArrayToNumber(numbers: number[]): void {
+//   // Докато масивът има повече от един елемент
+//   while (numbers.length > 1) {
+//     // Създаваме нов масив с дължина -1
+//     const condensed: number[] = [];
+
+//     // Обхождаме всички двойки и ги сумираме
+//     for (let i = 0; i < numbers.length - 1; i++) {
+//       const sum = numbers[i] + numbers[i + 1];
+//       condensed.push(sum);
+//     }
+
+//     // Заменяме оригиналния масив с новия
+//     numbers = condensed;
+//   }
+
+//   // Отпечатваме крайния резултат
+//   console.log(numbers[0]);
+// }
+
+// condenseArrayToNumber([2, 10, 3]);
+// // Output: 25
+
+// condenseArrayToNumber([5, 0, 4, 1, 2]);
+// // Output: 35
+
+// condenseArrayToNumber([1]);
+// // Output: 1
+
+
+
+// // 1. Add and Subtract
+// function addAndSubtract(arr: number[]): void {
+//   // Суми на оригиналния и новия масив
+//   let originalSum = 0;
+//   let modifiedSum = 0;
+
+//   // Създаваме нов масив с променени стойности
+//   const modifiedArr = arr.map((num, index) => {
+//     originalSum += num; // добавяме оригиналната стойност към оригиналната сума
+
+//     // Ако числото е четно → добавяме индекса
+//     // Ако е нечетно → изваждаме индекса
+//     const modified = num % 2 === 0 ? num + index : num - index;
+//     modifiedSum += modified; // добавяме към новата сума
+
+//     return modified; // връщаме промененото число
+//   });
+
+//   // Отпечатваме новия масив и двете суми
+//   console.log(modifiedArr);
+//   console.log(originalSum);
+//   console.log(modifiedSum);
+// }
+
+// addAndSubtract([5, 15, 23, 56, 35]);
+// // Output:
+// // [ 5, 14, 21, 59, 31 ]
+// // 134
+// // 130
+
+// addAndSubtract([-5, 11, 3, 0, 2]);
+// // Output:
+// // [ -5, 10, 1, 3, 6 ]
+// // 11
+// // 15
+
+
+
+// // Задача 2: Common Elements
+// function commonElements(arr1: string[], arr2: string[]): void {
+//   for (const element of arr1) {
+//     arr2.includes(element) && console.log(element);
+//   }
+//   console.log();
+// }
+
+// commonElements(
+//   ['Hey', 'hello', '2', '4', 'Peter', 'e'],
+//   ['Petar', '10', 'hey', '4', 'hello', '2']
+// );
+// // Output:
+// // hello
+// // 4
+// // 2
+
+// commonElements(
+//   ['S', 'o', 'f', 't', 'U', 'n', 'i', ' '],
+//   ['s', 'o', 'c', 'i', 'a', 'l']
+// );
+// // Output:
+// // o
+// // i
+
+
+
+// //  Задача 3: Merge Arrays
+// function mergeArrays(arr1: string[], arr2: string[]): void {
+//   let result: string[] = [];
+
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (i % 2 === 0) {
+//       const sum = Number(arr1[i]) + Number(arr2[i]);
+//       result.push(sum.toString());
+//     } else {
+//       result.push(arr1[i] + arr2[i]);
+//     }
+//   }
+
+//   console.log(result.join(' - '));
+
+// }
+
+// mergeArrays(['5', '15', '23', '56', '35'], ['17', '22', '87', '36', '11']);
+// // Output: 22 - 1522 - 110 - 5636 - 46
+
+// mergeArrays(['13', '12312', '5', '77', '4'], ['22', '333', '5', '122', '44']);
+// // Output: 35 - 12312333 - 10 - 77122 - 48
+
+
