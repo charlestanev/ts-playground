@@ -1103,3 +1103,134 @@
 // firstAndLastK([3, 6, 7, 8, 9]);
 
 
+// function printAndSum(start: number, end: number): void {
+//   let line = [];
+//   let sum: number = 0;
+
+//   for (let i = start; i <= end; i++) {
+//     line.push(i + ' ');
+//     sum += i;
+//   }
+
+//   console.log(line.join(''));
+//   console.log(`Sum: ${sum}`);
+//   console.log('\n');
+
+// }
+
+// printAndSum(5, 10);
+// // Output:
+// // 5 6 7 8 9 10
+// // Sum: 45
+
+// printAndSum(0, 26);
+// // Output:
+// // 0 1 2 ... 26
+// // Sum: 351
+
+// printAndSum(50, 60);
+// // Output:
+// // 50 51 52 53 54 55 56 57 58 59 60
+// // Sum: 605
+
+
+// function sumFirstAndLast(arr: string[]): void {
+//   const first = Number(arr[0])
+//   const last = Number(arr[arr.length - 1]);
+//   console.log(first + last);
+// }
+
+// sumFirstAndLast(['20', '30', '40']);       // Output: 60
+// sumFirstAndLast(['10', '17', '22', '33']); // Output: 43
+// sumFirstAndLast(['11', '58', '69']);       // Output: 80
+
+// function dayOfWeek(dayNumber: number): void {
+//   const days = [
+//     'Monday',    // 1
+//     'Tuesday',   // 2
+//     'Wednesday', // 3
+//     'Thursday',  // 4
+//     'Friday',    // 5
+//     'Saturday',  // 6
+//     'Sunday'     // 7
+//   ]
+
+//   dayNumber > 0 && dayNumber <= 7
+//     ? console.log(days[dayNumber - 1])
+//     : console.log('Invalid day!')
+// }
+
+// dayOfWeek(3);  // Output: Wednesday
+// dayOfWeek(6);  // Output: Saturday
+// dayOfWeek(11); // Output: Invalid day!
+
+
+// function reverseArray(n: number, elements: number[]): void {
+//   const sliced = elements.slice(0, n);
+//   const reversed = sliced.reverse();
+//   console.log(reversed.join(' '));
+
+// }
+
+// reverseArray(3, [10, 20, 30, 40, 50]);
+// // Output: 30 20 10
+
+// reverseArray(4, [-1, 20, 99, 5]);
+// // Output: 5 99 20 -1
+
+// function reverseStringsArray(arr: string[]): void {
+//   const reversed = arr.reverse();
+//   console.log(reversed.join(' '));
+// }
+
+// reverseStringsArray(['a', 'b', 'c', 'd', 'e']);
+// // Output: e d c b a
+
+// reverseStringsArray(['abc', 'def', 'hig', 'klm', 'nop']);
+// // Output: nop klm hig def abc
+
+// reverseStringsArray(['33', '123', '0', 'dd']);
+// // Output: dd 0 123 33
+
+// function sumEvenNumbers(arr: string[]): void {
+//   const numbers = arr.map(Number);
+//   let sum: number = 0;
+
+//   numbers.forEach(x =>
+//     x % 2 === 0 && (sum += x)
+//   )
+//   console.log(sum);
+
+// }
+// sumEvenNumbers(['1', '2', '3', '4', '5', '6']);
+// // Output: 12
+
+// sumEvenNumbers(['3', '5', '7', '9']);
+// // Output: 0
+
+// sumEvenNumbers(['2', '4', '6', '8', '10']);
+// // Output: 30
+
+function evenAndOddSubtraction(arr: number[]): void {
+
+  let evenSum: number = 0;
+  let oddSum: number = 0;
+
+  arr.forEach(x => {
+    x % 2 === 0
+      ? evenSum += x
+      : oddSum += x
+  })
+
+  console.log(evenSum - oddSum);
+
+}
+
+evenAndOddSubtraction([1, 2, 3, 4, 5, 6]);
+// Output: 3 (12 - 9)
+
+evenAndOddSubtraction([3, 5, 7, 9]);
+// Output: -24 (0 - 24)
+
+evenAndOddSubtraction([2, 4, 6, 8, 10]);
+// Output: 30 (30 - 0)
