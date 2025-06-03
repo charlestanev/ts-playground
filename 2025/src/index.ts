@@ -1392,3 +1392,46 @@
 // // Output: 35 - 12312333 - 10 - 77122 - 48
 
 
+// // Задача 4: Array Rotation
+// function arrayRotation(arr: number[], n: number): void {
+//   for (let i = 0; i < n; i++) {
+//     let first = arr.shift();
+//     arr.push(first)
+//   }
+//   console.log(arr.join(' '));
+// }
+
+// arrayRotation([51, 47, 32, 61, 21], 2);
+// // Output: 32 61 21 51 47
+
+// arrayRotation([32, 21, 61, 1], 4);
+// // Output: 32 21 61 1
+
+// arrayRotation([2, 4, 15, 31], 5);
+// // Output: 4 15 31 2
+
+
+
+// //  Задача 5: Max Number
+// function maxNumber(arr: number[]): void {
+//   let result = []
+//   for (let i = 0; i < arr.length; i++) {
+//     const current = arr[i];
+//     const rightPart = arr.slice(i + 1);
+//     const isTop = rightPart.every(x => current > x)
+//     isTop && result.push(current)
+//   }
+//   console.log(result.join(' '));
+// }
+
+// maxNumber([1, 4, 3, 2]);
+// // Output: 4 3 2
+
+// maxNumber([14, 24, 3, 19, 15, 17]);
+// // Output: 24 19 17
+
+// maxNumber([41, 41, 34, 20]);
+// // Output: 41 34 20
+
+// maxNumber([27, 19, 42, 2, 13, 45, 48]);
+// // Output: 48
