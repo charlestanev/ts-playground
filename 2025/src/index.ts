@@ -1714,25 +1714,25 @@
 // addAndSubtract(42, 58, 100); // 👉 0
 
 
-function charactersInRange(char1: string, char2: string): void {
-  const code1 = char1.charCodeAt(0);
-  const code2 = char2.charCodeAt(0);
 
-  const start = Math.min(code1, code2);
-  const end = Math.max(code1, code2);
+// // 3: Characters in Range
+// function charactersInRange(char1: string, char2: string): void {
+//   const code1 = char1.charCodeAt(0);
+//   const code2 = char2.charCodeAt(0);
 
-  const result: string[] = [];
+//   const start = Math.min(code1, code2);
+//   const end = Math.max(code1, code2);
 
-  for (let i = start + 1; i < end; i++) {
-    result.push(String.fromCharCode(i));
-  }
+//   const result: string[] = [];
 
-  console.log(result.join(' '));
+//   for (let i = start + 1; i < end; i++) {
+//     result.push(String.fromCharCode(i));
+//   }
+//   console.log(result.join(' '));
+// }
 
-}
-
-charactersInRange('a', 'd');     // 👉 b c
-charactersInRange('#', ':');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9
-charactersInRange('C', '#');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B
+// charactersInRange('a', 'd');     // 👉 b c
+// charactersInRange('#', ':');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9
+// charactersInRange('C', '#');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B
 
 
