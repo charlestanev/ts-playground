@@ -1825,3 +1825,22 @@
 // passwordValidator('Pa$s$s');
 // // 👉 Password must consist only of letters and digits
 // // 👉 Password must have at least 2 digits
+
+
+
+// 7. NxN Matrix
+function nxnMatrix(n: number): void {
+  const row = new Array(n).fill(n).join(' ');
+  for (let i = 0; i < n; i++) {
+    console.log(row);
+  }
+}
+
+nxnMatrix(3);
+// 👉 3 3 3
+// 👉 3 3 3
+// 👉 3 3 3
+
+nxnMatrix(2);
+// 👉 2 2
+// 👉 2 2
