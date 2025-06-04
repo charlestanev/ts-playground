@@ -1495,30 +1495,33 @@
 // // дясно = 3+4+2+5+1+1+4 = 20
 // // Output: 3
 
-// 7: Max Sequence of Equal Elements
-function maxSequence(arr: number[]): void {
-  let bestElement = arr[0];
-  let bestLenght = 1;
-  let currentLenght = 1;
+// // 7: Max Sequence of Equal Elements
+// function maxSequence(arr: number[]): void {
+//   let bestElement = arr[0];
+//   let bestLenght = 1;
+//   let currentLenght = 1;
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] === arr[i - 1]) {
-      currentLenght++;
-    } else {
-      currentLenght = 1;
-    }
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] === arr[i - 1]) {
+//       currentLenght++;
+//     } else {
+//       currentLenght = 1;
+//     }
 
-    if (currentLenght > bestLenght) {
-      bestLenght = currentLenght;
-      bestElement = arr[i];
-    }
-  }
+//     if (currentLenght > bestLenght) {
+//       bestLenght = currentLenght;
+//       bestElement = arr[i];
+//     }
+//   }
 
-  console.log(Array(bestLenght).fill(bestElement).join(' '));
+//   console.log(Array(bestLenght).fill(bestElement).join(' '));
 
-}
+// }
 
-maxSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1]); // 👉 2 2 2
-maxSequence([1, 1, 1, 2, 3, 1, 3, 3]);       // 👉 1 1 1
-maxSequence([4, 4, 4, 4]);                   // 👉 4 4 4 4
-maxSequence([0, 1, 1, 5, 2, 2, 6, 3, 3]);    // 👉 1 1
+// maxSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1]); // 👉 2 2 2
+// maxSequence([1, 1, 1, 2, 3, 1, 3, 3]);       // 👉 1 1 1
+// maxSequence([4, 4, 4, 4]);                   // 👉 4 4 4 4
+// maxSequence([0, 1, 1, 5, 2, 2, 6, 3, 3]);    // 👉 1 1
+
+
+
