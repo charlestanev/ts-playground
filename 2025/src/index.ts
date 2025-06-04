@@ -1736,3 +1736,21 @@
 // charactersInRange('C', '#');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B
 
 
+
+// function oddAndEvenSum(number: number): void {
+//   let oddSum: number = 0;
+//   let evenSum: number = 0;
+
+//   let arr = number.toString().split('').map(Number);
+//   arr.forEach(x => {
+//     x % 2 == 0
+//       ? evenSum += x
+//       : oddSum += x
+//   })
+
+//   console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`);
+
+// }
+
+// oddAndEvenSum(1000435);           // 👉 Odd sum = 9, Even sum = 4
+// oddAndEvenSum(3495892137259234);  // 👉 Odd sum = 54, Even sum = 22
