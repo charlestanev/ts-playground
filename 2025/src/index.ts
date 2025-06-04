@@ -1611,3 +1611,29 @@
 // console.log(mathPower(3, 4)); // 👉 81
 // console.log(mathPower(5, 0)); // 👉 1 (всяко число на степен 0 е 1)
 // console.log(mathPower(10, 2)); // 👉 100
+
+
+
+
+function simpleCalculator(numOne: number, numTwo: number, operator: string): void {
+  const multiply = (a: number, b: number) => { a * b }
+  const divide = (a: number, b: number) => a / b;
+  const add = (a: number, b: number) => a + b;
+  const subtract = (a: number, b: number) => a - b;
+
+  const result =
+    operator === 'multiply' ? multiply(numOne, numTwo)
+      : operator === 'divide' ? divide(numOne, numTwo)
+        : operator === 'add' ? add(numOne, numTwo)
+          : operator === 'subtract' ? subtract(numOne, numTwo)
+            : NaN;
+
+  console.log(result);
+
+}
+
+simpleCalculator(5, 5, 'multiply');   // 👉 25
+simpleCalculator(40, 8, 'divide');    // 👉 5
+simpleCalculator(12, 19, 'add');      // 👉 31
+simpleCalculator(50, 13, 'subtract'); // 👉 37
+
