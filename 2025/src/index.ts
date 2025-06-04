@@ -1754,3 +1754,30 @@
 
 // oddAndEvenSum(1000435);           // 👉 Odd sum = 9, Even sum = 4
 // oddAndEvenSum(3495892137259234);  // 👉 Odd sum = 54, Even sum = 22
+
+
+
+// // 5. Palindrome Integers
+// function palindromeIntegers(arr: number[]): void {
+//   arr.forEach(x => {
+//     let reverse = Number(x.toString().split('').reverse().join(''));
+//     x === reverse
+//       ? console.log(true)
+//       : console.log(false);
+//   })
+
+//   console.log();
+// }
+
+// palindromeIntegers([123, 323, 421, 121]);
+// // 👉 false
+// // 👉 true
+// // 👉 false
+// // 👉 true
+
+// palindromeIntegers([32, 2, 232, 1010]);
+// // 👉 false
+// // 👉 true
+// // 👉 true
+// // 👉 false
+
