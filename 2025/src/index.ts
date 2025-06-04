@@ -1543,3 +1543,45 @@
 // magicSum([1, 7, 6, 2, 19, 23], 8);
 // magicSum([14, 20, 60, 13, 7, 19, 8], 27);
 // magicSum([1, 2, 3, 4, 5, 6], 6);
+
+
+// // 1: Repeat String
+// function repeatString(text: string, count: number): string {
+//   return text.repeat(count)
+// }
+
+// console.log(repeatString("abc", 3)); // ➜ abcabcabc
+
+// // Още пример с дума "String" повторена 2 пъти
+// console.log(repeatString("String", 2)); // ➜ StringString
+
+function formatGrade(grade: number): void {
+
+  // Ако оценката е по-малка от 3.00, студентът е скъсан
+  // В този случай отпечатваме "Fail (2)" със закована стойност 2
+  if (grade < 3.00) {
+    console.log("Fail (2)");
+
+    // Ако оценката е между 3.00 и 3.49 включително — отпечатваме Poor
+  } else if (grade < 3.50) {
+    console.log(`Poor (${grade.toFixed(2)})`);
+
+    // Ако е между 3.50 и 4.49 — отпечатваме Good
+  } else if (grade < 4.50) {
+    console.log(`Good (${grade.toFixed(2)})`);
+
+    // Ако е между 4.50 и 5.49 — отпечатваме Very good
+  } else if (grade < 5.50) {
+    console.log(`Very good (${grade.toFixed(2)})`);
+
+    // Ако е 5.50 или повече — отпечатваме Excellent
+  } else {
+    console.log(`Excellent (${grade.toFixed(2)})`);
+  }
+}
+
+formatGrade(3.33);   // 👉 Poor (3.33)
+formatGrade(4.50);   // 👉 Very good (4.50)
+formatGrade(2.99);   // 👉 Fail (2)
+formatGrade(5.70);   // 👉 Excellent (5.70)
+formatGrade(3.50);   // 👉 Good (3.50)
