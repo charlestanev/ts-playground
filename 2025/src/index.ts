@@ -1690,25 +1690,49 @@
 // smallestOfThree(25, 21, 4);      // 👉 4
 
 
-// 2: Add and Subtract
-function addAndSubtract(a: number, b: number, c: number): void {
+// // 2: Add and Subtract
+// function addAndSubtract(a: number, b: number, c: number): void {
 
-  function sum(a: number, b: number) {
-    return a + b;
+//   function sum(a: number, b: number) {
+//     return a + b;
+//   }
+
+//   function substract(sum: number, c: number): number {
+//     return sum - c;
+//   }
+
+//   function result() {
+//     let result = substract(sum(a, b), c);
+//     console.log(result);
+//   }
+
+//   result();
+// }
+
+// addAndSubtract(23, 6, 10);   // 👉 19
+// addAndSubtract(1, 17, 30);   // 👉 -12
+// addAndSubtract(42, 58, 100); // 👉 0
+
+
+function charactersInRange(char1: string, char2: string): void {
+  const code1 = char1.charCodeAt(0);
+  const code2 = char2.charCodeAt(0);
+
+  const start = Math.min(code1, code2);
+  const end = Math.max(code1, code2);
+
+  const result: string[] = [];
+
+  for (let i = start + 1; i < end; i++) {
+    result.push(String.fromCharCode(i));
   }
 
-  function substract(sum: number, c: number): number {
-    return sum - c;
-  }
+  console.log(result.join(' '));
 
-  function result() {
-    let result = substract(sum(a, b), c);
-    console.log(result);
-  }
-
-  result();
 }
 
-addAndSubtract(23, 6, 10);   // 👉 19
-addAndSubtract(1, 17, 30);   // 👉 -12
-addAndSubtract(42, 58, 100); // 👉 0
+charactersInRange('a', 'd');     // 👉 b c
+charactersInRange('#', ':');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9
+charactersInRange('C', '#');     // 👉 $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B
+
+
