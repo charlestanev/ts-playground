@@ -1435,3 +1435,63 @@
 
 // maxNumber([27, 19, 42, 2, 13, 45, 48]);
 // // Output: 48
+
+
+
+// // 6: Equal Sums
+// function equalSums(arr: number[]): void {
+//   for (let i = 0; i < arr.length; i++) {
+//     const left = arr.slice(0, i);
+//     const right = arr.slice(i + 1);
+
+//     const leftSum = left.reduce((acc, curr) => acc + curr, 0);
+//     const rightSum = right.reduce((acc, curr) => acc + curr, 0);
+
+//     if (leftSum === rightSum) {
+//       console.log(i);
+//       return;
+//     }
+
+//   }
+//   console.log('no');
+
+// }
+
+// // function equalSums(arr: number[]): void {
+// //   for (let i = 0; i < arr.length; i++) {
+// //     // Вземаме масива отляво (до текущия индекс, но без него)
+// //     const left = arr.slice(0, i);
+
+// //     // Вземаме масива вдясно (след текущия индекс)
+// //     const right = arr.slice(i + 1);
+
+// //     // Изчисляваме сумите с reduce
+// //     const leftSum = left.reduce((a, b) => a + b, 0);
+// //     const rightSum = right.reduce((a, b) => a + b, 0);
+
+// //     // Сравняваме
+// //     if (leftSum === rightSum) {
+// //       console.log(i);
+// //       return;
+// //     }
+// //   }
+
+// //   // Ако не сме намерили такъв индекс
+// //   console.log('no');
+// // }
+
+
+
+// equalSums([1, 2, 3, 3]);
+// // Индекс 2:
+// // ляво: 1 + 2 = 3
+// // дясно: 3
+// // Output: 2
+// equalSums([1, 2]);
+// equalSums([1]);
+// equalSums([10, 5, 5, 99, 3, 4, 2, 5, 1, 1, 4]);
+// // Индекс 3:
+// // ляво = 10+5+5 = 20
+// // дясно = 3+4+2+5+1+1+4 = 20
+// // Output: 3
+
