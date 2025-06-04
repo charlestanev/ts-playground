@@ -1182,7 +1182,7 @@
 //   let negativeCount = 0;
 //   numOne < 0 && negativeCount++;
 //   numTwo < 0 && negativeCount++;
-//   numTwo < 0 && negativeCount++;
+//   numThree < 0 && negativeCount++;
 //   numOne === 0 || numTwo === 0 || numThree === 0
 //     ? console.log('Positive')
 //     : negativeCount % 2 !== 0
@@ -1193,5 +1193,23 @@
 // signCheck(-6, -12, 14);  // 👉 Positive
 // signCheck(-1, -2, -3);   // 👉 Negative
 // signCheck(-5, 1, 1);     // 👉 Negative
-// signCheck(0, -2, 3);     // 👉 Positive (0 го приемаме като неутрално)
-console.log('K');
+// signCheck(0, -2, 3);     // 👉 Positi ve (0 го приемаме като неутрално)
+// 1. Smallest of Three Numbers
+// Създаваме функция, която приема три числа като параметри
+function smallestOfThree(num1, num2, num3) {
+    // Създаваме променлива, която ще съдържа най-малкото число – започваме от първото
+    var smallest = num1;
+    // Ако второто число е по-малко от текущото най-малко – обновяваме стойността
+    if (num2 < smallest) {
+        smallest = num2;
+    }
+    // Ако третото число е по-малко от текущото най-малко – обновяваме стойността
+    if (num3 < smallest) {
+        smallest = num3;
+    }
+    // Отпечатваме най-малкото от трите числа
+    console.log(smallest);
+}
+smallestOfThree(2, 5, 3); // 👉 2
+smallestOfThree(600, 342, 123); // 👉 123
+smallestOfThree(25, 21, 4); // 👉 4
