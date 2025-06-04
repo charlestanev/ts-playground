@@ -1781,3 +1781,47 @@
 // // 👉 true
 // // 👉 false
 
+
+
+// function passwordValidator(password: string): void {
+//   const isLengthValid = password.length >= 6 && password.length <= 10;
+
+//   const isAlphanumeric = /^[A-Za-z0-9]+$/.test(password);
+
+//   let digitCount = 0;
+//   for (const char of password) {
+//     if (!isNaN(Number(char))) {
+//       digitCount++;
+//     }
+//   }
+
+//   const hasAtLeastTwoDigits = digitCount >= 2;
+
+//   if (isLengthValid && isAlphanumeric && hasAtLeastTwoDigits) {
+//     console.log("Password is valid");
+//   } else {
+//     if (!isLengthValid) {
+//       console.log("Password must be between 6 and 10 characters");
+//     }
+//     if (!isAlphanumeric) {
+//       console.log("Password must consist only of letters and digits");
+//     }
+//     if (!hasAtLeastTwoDigits) {
+//       console.log("Password must have at least 2 digits");
+//     }
+//   }
+
+//   console.log();
+
+// }
+
+// passwordValidator('logIn');
+// // 👉 Password must be between 6 and 10 characters
+// // 👉 Password must have at least 2 digits
+
+// passwordValidator('MyPass123');
+// // 👉 Password is valid
+
+// passwordValidator('Pa$s$s');
+// // 👉 Password must consist only of letters and digits
+// // 👉 Password must have at least 2 digits
