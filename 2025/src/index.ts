@@ -1890,12 +1890,16 @@ function perfectNumber(num: number): void {
   let sum = 0;
 
   for (let i = 1; i < num; i++) {
-    num % 1 === 0 && (sum += i)
+    if (num % i === 0) {
+      sum += i;
+    }
   }
 
-  sum === num
-    ? console.log("We have a perfect number!")
-    : console.log("It's not so perfect.");
+  if (sum == num) {
+    console.log("We have a perfect number!")
+  } else {
+    console.log("It's not so perfect.")
+  }
 }
 
 perfectNumber(6);        // 👉 We have a perfect number!
