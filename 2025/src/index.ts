@@ -1998,3 +1998,49 @@
 // // 👉 2.Onions
 // // 👉 3.Potatoes
 // // 👉 4.Tomatoes
+
+// 8.	Array Manipulations
+function arrayManipulations(input: string[]): void {
+  let numbers = input.shift().split(' ').map(Number);
+
+  input.forEach((x, i) => {
+    let [command, num1, num2] = [...x.split(' ')];
+
+    switch (command) {
+      case 'Add':
+        const number = Number(num1);
+        numbers.push(number)
+        break;
+
+      case 'Remove':
+        const numberToRemove = Number(num1);
+        numbers = numbers.filter((x) => x !== numberToRemove)
+        break;
+
+      case 'RemoveAt':
+        const numberToRemoveAt = Number(num1);
+        numbers = numbers.filter((_, i) => i !== numberToRemoveAt)
+        break;
+
+      case 'Insert':
+        const insert = Number(num1);
+        const at = Number(num2);
+        numbers.splice(at, 0, insert)
+        break;
+
+      default:
+        break;
+    }
+  })
+
+  console.log(numbers.join(' '));
+}
+
+arrayManipulations([
+  '4 19 2 53 6 43',
+  'Add 3',
+  'Remove 2',
+  'RemoveAt 1',
+  'Insert 8 3'
+]);
+// 👉 4 53 6 8 43 3
