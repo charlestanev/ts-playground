@@ -1982,3 +1982,19 @@
 
 // smallestTwoNumbers([3, 0, 10, 4, 7, 3]);
 // // 👉 0 3
+
+
+// // 7.	List of Products
+// function listOfProducts(products: string[]): void {
+//   let ordered = products
+//     .sort((a, b) => a.localeCompare(b))
+//     .forEach((x, i) => {
+//       console.log(`${i + 1}.${x}`);
+//     })
+// }
+
+// listOfProducts(["Potatoes", "Tomatoes", "Onions", "Apples"]);
+// // 👉 1.Apples
+// // 👉 2.Onions
+// // 👉 3.Potatoes
+// // 👉 4.Tomatoes
