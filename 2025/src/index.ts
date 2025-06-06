@@ -1949,3 +1949,18 @@
 // // 👉 7 8 9
 
 
+function lastKNumbersSequence(n: number, k: number): void {
+  const sequence: number[] = [1];
+  for (let i = 1; i <= n; i++) {
+    sequence.push()
+  }
+  console.log(sequence);
+
+}
+
+lastKNumbersSequence(6, 3);
+// 👉 1 1 2 4 7 13
+
+lastKNumbersSequence(8, 2);
+// 👉 1 1 2 3 5 8 13 21
+
