@@ -1828,19 +1828,76 @@
 
 
 
-// 7. NxN Matrix
-function nxnMatrix(n: number): void {
-  const row = new Array(n).fill(n).join(' ');
-  for (let i = 0; i < n; i++) {
-    console.log(row);
+// // 7. NxN Matrix
+// function nxnMatrix(n: number): void {
+//   const row = new Array(n).fill(n).join(' ');
+//   for (let i = 0; i < n; i++) {
+//     console.log(row);
+//   }
+// }
+
+// nxnMatrix(3);
+// // 👉 3 3 3
+// // 👉 3 3 3
+// // 👉 3 3 3
+
+// nxnMatrix(2);
+// // 👉 2 2
+// // 👉 2 2
+
+
+// 8. Perfect Number
+
+
+// // 9: Loading Bar
+// function loadingBar(progress: number): void {
+//   let loading: string[] = [];
+//   let percents = progress / 10;
+
+//   for (let i = 0; i < percents; i++) {
+//     loading.push('%');
+//   }
+//   for (let i = percents + 1; i <= 10; i++) {
+//     loading.push('.')
+//   }
+
+//   progress !== 100
+//     ? console.log(`${progress}% [${loading.join('')}]${'\n'}Still loading...`)
+//     : console.log(`${progress}% Complete!${'\n'}[%%%%%%%%%%]`)
+//   console.log();
+
+// }
+
+// loadingBar(30);
+// // 👉 30% [%%%.......]
+// // 👉 Still loading...
+
+// loadingBar(50);
+// // 👉 50% [%%%%%.....]
+// // 👉 Still loading...
+
+// loadingBar(70);
+// // 👉 100% Complete!
+// // 👉 [%%%%%%%%%%]
+
+// loadingBar(100);
+// // 👉 100% Complete!
+// // 👉 [%%%%%%%%%%]
+
+
+// Perfect Number
+function perfectNumber(num: number): void {
+  let sum = 0;
+
+  for (let i = 1; i < num; i++) {
+    num % 1 === 0 && (sum += i)
   }
+
+  sum === num
+    ? console.log("We have a perfect number!")
+    : console.log("It's not so perfect.");
 }
 
-nxnMatrix(3);
-// 👉 3 3 3
-// 👉 3 3 3
-// 👉 3 3 3
-
-nxnMatrix(2);
-// 👉 2 2
-// 👉 2 2
+perfectNumber(6);        // 👉 We have a perfect number!
+perfectNumber(28);       // 👉 We have a perfect number!
+perfectNumber(1236498);  // 👉 It's not so perfect.
