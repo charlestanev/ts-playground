@@ -1999,48 +1999,88 @@
 // // 👉 3.Potatoes
 // // 👉 4.Tomatoes
 
-// 8.	Array Manipulations
-function arrayManipulations(input: string[]): void {
-  let numbers = input.shift().split(' ').map(Number);
+// // 8.	Array Manipulations
+// function arrayManipulations(input: string[]): void {
+//   let numbers = input.shift().split(' ').map(Number);
 
-  input.forEach((x, i) => {
-    let [command, num1, num2] = [...x.split(' ')];
+//   input.forEach((x, i) => {
+//     let [command, num1, num2] = [...x.split(' ')];
 
-    switch (command) {
-      case 'Add':
-        const number = Number(num1);
-        numbers.push(number)
-        break;
+//     switch (command) {
+//       case 'Add':
+//         const number = Number(num1);
+//         numbers.push(number)
+//         break;
 
-      case 'Remove':
-        const numberToRemove = Number(num1);
-        numbers = numbers.filter((x) => x !== numberToRemove)
-        break;
+//       case 'Remove':
+//         const numberToRemove = Number(num1);
+//         numbers = numbers.filter((x) => x !== numberToRemove)
+//         break;
 
-      case 'RemoveAt':
-        const numberToRemoveAt = Number(num1);
-        numbers = numbers.filter((_, i) => i !== numberToRemoveAt)
-        break;
+//       case 'RemoveAt':
+//         const numberToRemoveAt = Number(num1);
+//         numbers = numbers.filter((_, i) => i !== numberToRemoveAt)
+//         break;
 
-      case 'Insert':
-        const insert = Number(num1);
-        const at = Number(num2);
-        numbers.splice(at, 0, insert)
-        break;
+//       case 'Insert':
+//         const insert = Number(num1);
+//         const at = Number(num2);
+//         numbers.splice(at, 0, insert)
+//         break;
 
-      default:
-        break;
-    }
-  })
+//       default:
+//         break;
+//     }
+//   })
 
-  console.log(numbers.join(' '));
-}
+//   console.log(numbers.join(' '));
+// }
 
-arrayManipulations([
-  '4 19 2 53 6 43',
-  'Add 3',
-  'Remove 2',
-  'RemoveAt 1',
-  'Insert 8 3'
-]);
-// 👉 4 53 6 8 43 3
+// arrayManipulations([
+//   '4 19 2 53 6 43',
+//   'Add 3',
+//   'Remove 2',
+//   'RemoveAt 1',
+//   'Insert 8 3'
+// ]);
+// // 👉 4 53 6 8 43 3
+
+
+// // Exercises: Arrays Advanced
+// // 1.	Train
+// function train(input: string[]): void {
+//   const wagons = input.shift()!.split(' ').map(Number);
+
+//   const maxCapacity = Number(input.shift());
+
+//   input.forEach(command => {
+//     if (command.startsWith('Add')) {
+//       const passangers = Number(command.split(' ')[1]);
+//       wagons.push(passangers);
+//     } else {
+//       const passangersToFit = Number(command);
+
+//       for (let i = 0; i < wagons.length; i++) {
+//         if (wagons[i] + passangersToFit <= maxCapacity) {
+//           wagons[i] += passangersToFit;
+//           break;
+//         }
+//       }
+//     }
+//   })
+
+//   console.log(wagons.join(' '));
+
+// }
+
+// train([
+//   '32 54 21 12 4 0 23',
+//   '75',
+//   'Add 10',
+//   'Add 0',
+//   '30',
+//   '10',
+//   '75'
+// ]);
+// // 👉 72 54 21 12 4 75 23 10 0
+
