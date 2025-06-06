@@ -1967,19 +1967,18 @@
 // // 👉 1 1 2 3 5 8 13 21
 
 
-function processOddNumbers(arr: number[]): void {
-  let odd = arr
-    .filter((_, i) => i % 2 !== 0)
-    .map(x => x * 2)
-    .reverse()
-    .join(' ')
+// // 6.	Smallest Two Numbers
+// function smallestTwoNumbers(arr: number[]): void {
+//   let result = arr
+//     .sort((a, b) => a - b)
+//     .splice(0, 2)
+//     .join(' ')
+//   console.log(result);
 
-  console.log(odd);
+// }
 
-}
+// smallestTwoNumbers([30, 15, 50, 5]);
+// // 👉 5 15
 
-processOddNumbers([10, 15, 20, 25]);
-// 👉 50 30
-
-processOddNumbers([3, 0, 10, 4, 7, 3]);
-// 👉 6 8 0
+// smallestTwoNumbers([3, 0, 10, 4, 7, 3]);
+// // 👉 0 3
