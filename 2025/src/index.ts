@@ -1905,3 +1905,43 @@
 // perfectNumber(6);        // 👉 We have a perfect number!
 // perfectNumber(28);       // 👉 We have a perfect number!
 // perfectNumber(1236498);  // 👉 It's not so perfect.
+
+
+// // Lab: Arrays Advanced
+// function negativeOrPositive(arr: number[]): void {
+//   let result = [];
+//   for (const i of arr) {
+//     i < 0
+//       ? result.unshift(i)
+//       : result.push(i)
+//   }
+
+//   result.forEach(x => console.log(x))
+// }
+
+// negativeOrPositive([7, -2, 8, 9]);
+// // 👉 -2
+// // 👉 7
+// // 👉 8
+// // 👉 9
+
+// negativeOrPositive([3, -2, 0, -1]);
+// // 👉 -1
+// // 👉 -2
+// // 👉 3
+// // 👉 0
+
+
+function firstAndLastKNumbers(arr: number[]): void {
+  
+}
+
+firstAndLastKNumbers([2, 7, 8, 9]);
+// 👉 7 8
+// 👉 8 9
+
+firstAndLastKNumbers([3, 6, 7, 8, 9]);
+// 👉 6 7 8
+// 👉 7 8 9
+
+
