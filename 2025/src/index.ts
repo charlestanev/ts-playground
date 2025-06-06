@@ -1966,3 +1966,20 @@
 // lastKNumbersSequence(8, 2);
 // // 👉 1 1 2 3 5 8 13 21
 
+
+function processOddNumbers(arr: number[]): void {
+  let odd = arr
+    .filter((_, i) => i % 2 !== 0)
+    .map(x => x * 2)
+    .reverse()
+    .join(' ')
+
+  console.log(odd);
+
+}
+
+processOddNumbers([10, 15, 20, 25]);
+// 👉 50 30
+
+processOddNumbers([3, 0, 10, 4, 7, 3]);
+// 👉 6 8 0
