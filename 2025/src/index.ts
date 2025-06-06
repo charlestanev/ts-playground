@@ -1948,19 +1948,21 @@
 // // 👉 6 7 8
 // // 👉 7 8 9
 
+// // 4: Last K Numbers Sequence
+// function lastKNumbersSequence(n: number, k: number): void {
+//   const sequence: number[] = [1];
+//   for (let i = 1; i < n; i++) {
+//     const startIndex = Math.max(0, i - k);
+//     const lastK = sequence.slice(startIndex, i);
+//     const sum = lastK.reduce((a, b) => a + b, 0)
+//     sequence.push(sum)
+//   }
+//   console.log(sequence);
+// }
 
-function lastKNumbersSequence(n: number, k: number): void {
-  const sequence: number[] = [1];
-  for (let i = 1; i <= n; i++) {
-    sequence.push()
-  }
-  console.log(sequence);
+// lastKNumbersSequence(6, 3);
+// // 👉 1 1 2 4 7 13
 
-}
-
-lastKNumbersSequence(6, 3);
-// 👉 1 1 2 4 7 13
-
-lastKNumbersSequence(8, 2);
-// 👉 1 1 2 3 5 8 13 21
+// lastKNumbersSequence(8, 2);
+// // 👉 1 1 2 3 5 8 13 21
 
