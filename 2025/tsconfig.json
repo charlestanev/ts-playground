@@ -3,6 +3,8 @@
     "target": "es2023",
     "module": "commonjs",
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true
   }
 }
