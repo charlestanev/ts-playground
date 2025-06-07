@@ -2084,3 +2084,21 @@
 // ]);
 // // 👉 72 54 21 12 4 75 23 10 0
 
+
+
+// 2: Distinct Array
+function distinctArray(arr: number[]): void {
+    const unique: number[] = [];
+
+    arr.forEach(num => {
+        if (!unique.includes(num)) {
+            unique.push(num)
+        }
+    })
+
+    console.log(unique.join(' '));
+
+}
+
+distinctArray([7, 8, 9, 7, 2, 3, 4, 1, 2]);
+// 👉 7 8 9 2 3 4 1
