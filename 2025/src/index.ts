@@ -2417,3 +2417,33 @@
 
 // convertToJSON("Ivan", "Ivanov", 25);
 
+
+
+// // 5.	Cats
+// class Cat {
+//     name: string;
+//     age: number;
+
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     meow(): void {
+//         console.log(`${this.name}, age ${this.age} says Meow`);
+//     }
+// }
+
+// function cats(data: string[]): void {
+//     for (const entry of data) {
+//         const [name, ageStr] = entry.split(' ');
+
+//         const age = Number(ageStr);
+
+//         const cat = new Cat(name, age);
+
+//         cat.meow();
+//     }
+// }
+
+// cats(['Mellow 2', 'Tom 5']);
