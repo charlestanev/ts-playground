@@ -2284,3 +2284,73 @@
 
 // searchForNumber([1, 1, 1, 1], [4, 2, 1]);
 // // 👉 Number 1 occurs 2 times.
+
+
+
+// // 8: Array Manipulator
+// function arrayManipulator(numbers: number[], commands: string[]): void {
+//     for (const commandLine of commands) {
+//         const parts = commandLine.split(' ');
+//         let command = parts[0]
+
+//         switch (command) {
+//             case 'add':
+//                 const addIndex = Number(parts[1]);
+//                 const addElement = Number(parts[2]);
+//                 numbers.splice(addIndex, 0, addElement);
+//                 break;
+
+//             case 'addMany':
+//                 const addManyIndex = Number(parts[1]);
+//                 const elementsToAdd = parts.slice(2).map(Number);
+//                 numbers.splice(addManyIndex, 0, ...elementsToAdd);
+//                 break;
+
+
+//             case 'contains':
+//                 const element = Number(parts[1]);
+//                 console.log(numbers.indexOf(element));
+//                 break;
+
+//             case 'remove':
+//                 const remove = Number(parts[1]);
+//                 numbers.splice(remove, 1)
+//                 break;
+
+//             case 'shift':
+//                 const position = Number(parts[1]);
+//                 for (let i = 0; i < position; i++) {
+//                     let eleme = numbers.shift();
+//                     eleme !== undefined && numbers.push(eleme);
+//                 }
+//                 break;
+
+//             case 'sumPairs':
+//                 let result: number[] = [];
+//                 for (let i = 0; i < numbers.length; i += 2) {
+//                     const first = numbers[i];
+//                     const second = (numbers[i + 1] !== undefined)
+//                         ? numbers[i + 1]
+//                         : 0
+//                     result.push(first + second)
+//                 }
+//                 numbers = result;
+//                 break;
+
+//             case 'print':
+//                 console.log(`[ ${numbers.join(', ')} ]`)
+//                 return;
+
+//             default:
+//                 break;
+//         }
+//     }
+// }
+
+// arrayManipulator(
+//     [1, 2, 4, 5, 6, 7],
+//     ['add 1 8', 'contains 1', 'contains 3', 'print']
+// );
+// // 👉 0
+// // 👉 -1
+// // 👉 [ 1, 8, 2, 4, 5, 6, 7 ]
