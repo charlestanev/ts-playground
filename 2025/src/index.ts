@@ -2144,3 +2144,21 @@
 // // 👉 Annie
 // // 👉 Garry
 // // 👉 Jerry
+
+
+// //  4: Sorting
+// function sorting(numbers: number[]): void {
+//     let ascending = numbers.slice().sort((a, b) => a - b);
+//     let descending = numbers.slice().sort((a, b) => b - a);
+
+//     let ordered: number[] = [];
+//     for (let i = 0; i < numbers.length / 2; i++) {
+//         ordered.push(descending[i], ascending[i])
+//     }
+
+//     console.log(ordered.join(' '));
+
+
+// }
+// sorting([1, 21, 3, 52, 69, 63, 31, 2, 18, 94]);
+// // 👉 94 1 69 2 63 3 52 18 31 21
