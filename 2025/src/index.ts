@@ -2357,21 +2357,51 @@
 
 
 
-// Lab: Objects and Classes
-// 1: Person Info
-function personInfo(firstName: string, lastName: string, age: number) {
+// // Lab: Objects and Classes
+// // 1: Person Info
+// function personInfo(firstName: string, lastName: string, age: number) {
 
-    let person = {
-        firstName : firstName,
-        lastName : lastName,
-        age : Number(age)
-    }
+//     let person = {
+//         firstName : firstName,
+//         lastName : lastName,
+//         age : Number(age)
+//     }
 
-    return person;
-}
+//     return person;
+// }
 
-console.log(personInfo("Peter", "Pan", 20));
-// 👉 { firstName: 'Peter', lastName: 'Pan', age: '20' }
+// console.log(personInfo("Peter", "Pan", 20));
+// // 👉 { firstName: 'Peter', lastName: 'Pan', age: '20' }
+
+
+
+// // 2.	City
+// function cityInfo(obj: { [key: string]: string | number }) {
+//     for (const key in obj) {
+//         console.log(`${key} -> ${obj[key]}`);
+//     }
+// }
+
+// cityInfo({
+//     name: "Sofia",
+//     area: 492,
+//     population: 1238438,
+//     country: "Bulgaria",
+//     postCode: "1000"
+// });
+
+
+
+// // 2.	City
+// function convertToObject(jsonStr: string): void {
+//     let obj = JSON.parse(jsonStr);
+
+//     for (const key in obj) {
+//         console.log(`${key}: ${obj[key]}`);
+//     }
+// }
+
+// convertToObject('{"name": "George", "age": 40, "town": "Sofia"}');
 
 
 
