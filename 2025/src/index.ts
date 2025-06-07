@@ -2086,19 +2086,61 @@
 
 
 
-// 2: Distinct Array
-function distinctArray(arr: number[]): void {
-    const unique: number[] = [];
+// // 2: Distinct Array
+// function distinctArray(arr: number[]): void {
+//     const unique: number[] = [];
 
-    arr.forEach(num => {
-        if (!unique.includes(num)) {
-            unique.push(num)
-        }
-    })
+//     arr.forEach(num => {
+//         if (!unique.includes(num)) {
+//             unique.push(num)
+//         }
+//     })
 
-    console.log(unique.join(' '));
+//     console.log(unique.join(' '));
 
-}
+// }
 
-distinctArray([7, 8, 9, 7, 2, 3, 4, 1, 2]);
-// 👉 7 8 9 2 3 4 1
+// distinctArray([7, 8, 9, 7, 2, 3, 4, 1, 2]);
+// // 👉 7 8 9 2 3 4 1
+
+
+// // 3: House Party
+// function houseParty(commands: string[]): void {
+//     const guests: string[] = [];
+
+//     commands.forEach(command => {
+//         const name = command.split(' ')[0];
+
+//         if (command.includes('is going!')) {
+//             if (guests.includes(name)) {
+//                 console.log(`${name} is already in the list!`);
+//             } else {
+//                 guests.push(name)
+//             }
+//         } else if (command.includes('is not going!')) {
+//             if (guests.includes(name)) {
+//                 const index = guests.indexOf(name);
+//                 guests.splice(index, 1)
+//             } else {
+//                 console.log(`${name} is not in the list!`);
+//             }
+//         }
+//     })
+
+//     guests.forEach(x => console.log(x))
+
+// }
+
+// houseParty([
+//     'Tom is going!',
+//     'Annie is going!',
+//     'Tom is going!',
+//     'Garry is going!',
+//     'Jerry is going!'
+// ]);
+
+// // 👉 Tom is already in the list!
+// // 👉 Tom
+// // 👉 Annie
+// // 👉 Garry
+// // 👉 Jerry
