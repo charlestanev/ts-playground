@@ -2260,4 +2260,27 @@
 // // Остава: [1, 1] → сума = 2
 
 
+// // 7: Search for a Number
+// function searchForNumber(data: number[], instructions: number[]): void {
+//     let elementsToGet = instructions[0];
+//     let elementsToRemove = instructions[1];
+//     let searchedNum = instructions[2];
 
+//     let arr = data.slice(0, elementsToGet);
+//     arr = arr.filter((_, x) => x >= elementsToRemove);
+//     let stepCount: number = 0;
+//     arr.forEach((x) => x === searchedNum && stepCount++);
+
+//     console.log(`"Number ${searchedNum} occurs ${stepCount} times"`);
+
+//     console.log();
+// }
+
+// searchForNumber([5, 2, 3, 4, 1, 6], [5, 2, 3]);
+// // 👉 Number 3 occurs 1 times.
+
+// searchForNumber([1, 2, 3, 4, 5, 6], [3, 1, 4]);
+// // 👉 Number 4 occurs 1 times.
+
+// searchForNumber([1, 1, 1, 1], [4, 2, 1]);
+// // 👉 Number 1 occurs 2 times.
