@@ -2392,7 +2392,7 @@
 
 
 
-// // 2.	City
+// // 3.	Convert to Object
 // function convertToObject(jsonStr: string): void {
 //     let obj = JSON.parse(jsonStr);
 
@@ -2404,4 +2404,16 @@
 // convertToObject('{"name": "George", "age": 40, "town": "Sofia"}');
 
 
+
+// // 4.	Convert to JSON
+// function convertToJSON(name: string, lastName: string, age: number): void {
+//     let person = {
+//         name,
+//         lastName,
+//         age
+//     }
+//     console.log(JSON.stringify(person));
+// }
+
+// convertToJSON("Ivan", "Ivanov", 25);
 
