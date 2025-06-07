@@ -2354,3 +2354,24 @@
 // // 👉 0
 // // 👉 -1
 // // 👉 [ 1, 8, 2, 4, 5, 6, 7 ]
+
+
+
+// Lab: Objects and Classes
+// 1: Person Info
+function personInfo(firstName: string, lastName: string, age: number) {
+
+    let person = {
+        firstName : firstName,
+        lastName : lastName,
+        age : Number(age)
+    }
+
+    return person;
+}
+
+console.log(personInfo("Peter", "Pan", 20));
+// 👉 { firstName: 'Peter', lastName: 'Pan', age: '20' }
+
+
+
