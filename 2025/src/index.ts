@@ -2504,18 +2504,15 @@ function songs(input: string[]): void {
 
         songs.push(song);
 
-        console.log('song:' + song);
-
     }
 
-    console.log('songs' + songs);
-
-    // typeToPrint === 'all'
-    //     ? songs.forEach(song => console.log(song.name)
-    //     : songs
-    // )
-
-
+    if (typeToPrint === 'all') {
+        songs.forEach(song => console.log(song.name))
+    } else {
+        songs
+            .filter(song => song.type === typeToPrint)
+            .forEach(song => console.log(song.name))
+    }
 
     console.log();
 
