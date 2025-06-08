@@ -2447,3 +2447,32 @@
 // }
 
 // cats(['Mellow 2', 'Tom 5']);
+
+
+// class Cat {
+//     name: string;
+//     age: number;
+
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     meow() {
+//         console.log(`${this.name}, age ${this.age} says Meow`);
+//     }
+// }
+
+// function cats(input: string[]) {
+//     for (let i = 0; i < input.length; i++) {
+//         let parts = input[i].split(' ');
+//         let catName = parts[0];
+//         let catAge = Number(parts[1]);
+
+//         let cat = new Cat(catName, catAge);
+
+//         cat.meow()
+//     }
+
+// }
+
