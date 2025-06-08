@@ -2478,64 +2478,95 @@
 
 
 
-class Song {
-    type: string;
-    name: string;
-    time: string;
+// class Song {
+//     type: string;
+//     name: string;
+//     time: string;
 
-    constructor(type: string, name: string, time: string) {
-        this.type = type;
-        this.name = name;
-        this.time = time;
-    }
-}
+//     constructor(type: string, name: string, time: string) {
+//         this.type = type;
+//         this.name = name;
+//         this.time = time;
+//     }
+// }
 
-function songs(input: string[]): void {
-    const numberOfSongs = Number(input.shift());
+// function songs(input: string[]): void {
+//     const numberOfSongs = Number(input.shift());
 
-    const typeToPrint = input.pop();
+//     const typeToPrint = input.pop();
 
-    const songs: Song[] = [];
+//     const songs: Song[] = [];
 
-    for (let i = 0; i < numberOfSongs; i++) {
-        const [type, name, time] = input[i].split('_');
+//     for (let i = 0; i < numberOfSongs; i++) {
+//         const [type, name, time] = input[i].split('_');
 
-        const song = new Song(type, name, time);
+//         const song = new Song(type, name, time);
 
-        songs.push(song);
+//         songs.push(song);
 
-    }
+//     }
 
-    if (typeToPrint === 'all') {
-        songs.forEach(song => console.log(song.name))
-    } else {
-        songs
-            .filter(song => song.type === typeToPrint)
-            .forEach(song => console.log(song.name))
-    }
+//     if (typeToPrint === 'all') {
+//         songs.forEach(song => console.log(song.name))
+//     } else {
+//         songs
+//             .filter(song => song.type === typeToPrint)
+//             .forEach(song => console.log(song.name))
+//     }
 
-    console.log();
+//     console.log();
 
-}
+// }
 
-songs([
-    '3',
-    'favourite_DownTown_3:14',
-    'favourite_Kiss_4:16',
-    'favourite_Smooth Criminal_4:01',
-    'favourite'
-]);
+// songs([
+//     '3',
+//     'favourite_DownTown_3:14',
+//     'favourite_Kiss_4:16',
+//     'favourite_Smooth Criminal_4:01',
+//     'favourite'
+// ]);
 
-songs(['4',
-    'favourite_DownTown_3:14',
-    'listenLater_Andalouse_3:24',
-    'favourite_In To The Night_3:58',
-    'favourite_Live It Up_3:48',
-    'listenLater']
-);
+// songs(['4',
+//     'favourite_DownTown_3:14',
+//     'listenLater_Andalouse_3:24',
+//     'favourite_In To The Night_3:58',
+//     'favourite_Live It Up_3:48',
+//     'listenLater']
+// );
 
-songs(['2',
-    'like_Replay_3:15',
-    'ban_Photoshop_3:48',
-    'all']
-);
+// songs(['2',
+//     'like_Replay_3:15',
+//     'ban_Photoshop_3:48',
+//     'all']
+// );
+
+
+// function solve(data:string[]):void{
+//     class Employee {
+//         name:string;
+//         id: number;
+
+//         constructor(str:string){
+//             this.name = str;
+//             this.id = str.length;
+//         }
+
+//         print(){
+//             return (`Name: ${this.name} -- Personal Number: ${this.id}`);
+//         }
+//     }
+
+//     data.map(str => {
+//         return new Employee(str);
+//     }).forEach(obj =>{
+//         console.log(obj.print());
+//     })
+
+// }
+
+// solve([
+// 'Silas Butler',
+// 'Adnaan Buckley',
+// 'Juan Peterson',
+// 'Brendan Villarreal'
+// ])
