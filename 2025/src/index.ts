@@ -2570,3 +2570,19 @@
 // 'Juan Peterson',
 // 'Brendan Villarreal'
 // ])
+
+// function solve(city: { [key: string]: any }) {
+//     let tuples = Object.entries(city);
+
+//     for (const [key, value] of tuples) {
+//         console.log(`${key} -> ${value}`);
+//     }
+// }
+
+// solve({
+//     name: "Sofia",
+//     area: 492,
+//     population: 1238438,
+//     country: "Bulgaria",
+//     postCode: "1000"
+// })
