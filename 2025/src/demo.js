@@ -72,7 +72,7 @@
 //         //     console.log(`${i}: ${obj[i]}`);
 //         // }
 //         console.log(obj);
-        
+
 //     }
 // }
 
@@ -80,3 +80,32 @@
 //     ['Sofia | 42.696552 | 23.32601',
 //         'Beijing | 39.913818 | 116.363625']
 // )
+
+
+
+function solve(stock, kur) {
+    let shop = {};
+    let delivery = {};
+
+    for (let i = 0; i < stock.length; i += 2) {
+        const item = stock[i];
+        const itemCount = Number(stock[i + 1]);
+
+        shop[item] = itemCount
+    }
+
+    for (let i = 0; i < kur.length; i += 2) {
+        const item = kur[i];
+        const itemCount = Number(kur[i + 1]);
+
+        delivery[item] = itemCount
+    }
+    console.log(shop);
+    console.log(delivery);
+    
+}
+
+solve(
+    ['Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'], 
+    ['Flour', '44', 'Oil', '12', 'Pasta', '7', 'Tomatoes', '70', 'Bananas', '30']
+)
