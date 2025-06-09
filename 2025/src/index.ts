@@ -2585,25 +2585,80 @@
 // })
 
 
-function solve(input: string[]) {
-    class Cat {
-        name: string;
-        age: number;
+// function solve(input: string[]) {
+//     class Cat {
+//         name: string;
+//         age: number;
 
-        constructor(name: string, age: string) {
-            this.name = name;
-            this.age = Number(age);
-        }
+//         constructor(name: string, age: string) {
+//             this.name = name;
+//             this.age = Number(age);
+//         }
 
-        meow(): void {
-            console.log(`${this.name}, age ${this.age} says Meow`);
-        }
-    }
+//         meow(): void {
+//             console.log(`${this.name}, age ${this.age} says Meow`);
+//         }
+//     }
 
-    for (const line of input) {
-        let [name, age] = line.split(' ');
-        let cat = new Cat(name, age);
-        cat.meow()
-    }
-}
-solve(['Mellow 2', 'Tom 5'])
+//     for (const line of input) {
+//         let [name, age] = line.split(' ');
+//         let cat = new Cat(name, age);
+//         cat.meow()
+//     }
+// }
+// solve(['Mellow 2', 'Tom 5'])
+
+
+// class Song {
+//     type: string;
+//     name: string;
+//     time: string;
+
+//     constructor(type: string, name: string, time: string) {
+//         this.type = type;
+//         this.name = name;
+//         this.time = time;
+//     }
+// }
+
+// function solve(input: (string | number)[]): void {
+//     const numbersongs = Number(input.shift());
+//     const whatToPrint = input.pop();
+
+//     const songs: Song[] = [];
+
+//     for (const line of input) {
+//         let [type, name, time] = (line as string).split('_');
+//         let song = new Song(type, name, time);
+//         songs.push(song);
+//     }
+
+//     whatToPrint === 'all'
+//             ? songs.forEach(x => console.log(x.name))
+//             : songs
+//                 .filter(x => x.type === whatToPrint)
+//                 .forEach(x => console.log(x.name))
+//         console.log();
+// }
+
+// solve([4,
+//     'favourite_DownTown_3:14',
+//     'listenLater_Andalouse_3:24',
+//     'favourite_In To The Night_3:58',
+//     'favourite_Live It Up_3:48',
+//     'listenLater'])
+
+// solve([
+//     3,
+//     'favourite_DownTown_3:14',
+//     'favourite_Kiss_4:16',
+//     'favourite_Smooth Criminal_4:01',
+//     'favourite'
+// ]);
+
+// solve([
+//     2,
+//     'like_Replay_3:15',
+//     'ban_Photoshop_3:48',
+//     'all'
+// ]);
