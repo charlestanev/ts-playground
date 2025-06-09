@@ -2453,9 +2453,9 @@
 //     name: string;
 //     age: number;
 
-//     constructor(name: string, age: number) {
+//     constructor(name: string, age: string) {
 //         this.name = name;
-//         this.age = age;
+//         this.age = Number(age);
 //     }
 
 //     meow() {
@@ -2464,17 +2464,14 @@
 // }
 
 // function cats(input: string[]) {
-//     for (let i = 0; i < input.length; i++) {
-//         let parts = input[i].split(' ');
-//         let catName = parts[0];
-//         let catAge = Number(parts[1]);
-
-//         let cat = new Cat(catName, catAge);
-
+//     for (const line of input) {
+//         let [name, age] = line.split(' ');
+//         let cat = new Cat(name, age);
 //         cat.meow()
 //     }
-
 // }
+
+// solve(['Mellow 2', 'Tom 5'])
 
 
 
@@ -2586,3 +2583,27 @@
 //     country: "Bulgaria",
 //     postCode: "1000"
 // })
+
+
+function solve(input: string[]) {
+    class Cat {
+        name: string;
+        age: number;
+
+        constructor(name: string, age: string) {
+            this.name = name;
+            this.age = Number(age);
+        }
+
+        meow(): void {
+            console.log(`${this.name}, age ${this.age} says Meow`);
+        }
+    }
+
+    for (const line of input) {
+        let [name, age] = line.split(' ');
+        let cat = new Cat(name, age);
+        cat.meow()
+    }
+}
+solve(['Mellow 2', 'Tom 5'])
