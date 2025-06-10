@@ -88,10 +88,8 @@ function solve(stock, kur) {
     let delivery = {};
 
     for (let i = 0; i < stock.length; i += 2) {
-        const item = stock[i];
-        const itemCount = Number(stock[i + 1]);
-
-        shop[item] = itemCount
+        const element = stock[i];
+        shop[element] = Number(stock[i + 1]);
     }
 
     for (let i = 0; i < kur.length; i += 2) {
