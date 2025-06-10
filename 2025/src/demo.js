@@ -83,7 +83,7 @@
 
 
 
-function solve(stock, kur) {
+function solve(stock, ordered) {
     let shop = {};
     let delivery = {};
 
@@ -92,28 +92,12 @@ function solve(stock, kur) {
         shop[element] = Number(stock[i + 1]);
     }
 
-    for (let i = 0; i < kur.length; i += 2) {
-        const item = kur[i];
-        const itemCount = Number(kur[i + 1]);
-
-        delivery[item] = itemCount
-    }
-
-    for (const i in shop) {
-        let product = i;
-        let productQuantity = shop[i];
-
-        for (const j in delivery) {
-            let newProduct = j;
-            let newProductQuantity = delivery[j];
-
-            if (newProduct === product) {
-                shop[productQuantity] += newProductQuantity
-            } else {
-                product = newProduct;
-                product[productQuantity] = newProductQuantity
-            }
-
+    for (let i = 0; i < ordered.length; i += 2) {
+        const element = ordered[i];
+        if (shop.hasOwnProperty(element)) {
+            shop[element] += Number(ordered[i + 1]);
+        } else {
+            shop[element] = Number(ordered[i + 1]);
         }
     }
 
