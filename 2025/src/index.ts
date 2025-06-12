@@ -2621,44 +2621,44 @@
 //     }
 // }
 
-// function solve(input: (string | number)[]): void {
-//     const numbersongs = Number(input.shift());
-//     const whatToPrint = input.pop();
+function solve(input: (string | number)[]): void {
+    const numbersongs = Number(input.shift());
+    const whatToPrint = input.pop();
 
-//     const songs: Song[] = [];
+    const songs: Song[] = [];
 
-//     for (const line of input) {
-//         let [type, name, time] = (line as string).split('_');
-//         let song = new Song(type, name, time);
-//         songs.push(song);
-//     }
+    for (const line of input) {
+        let [type, name, time] = (line as string).split('_');
+        let song = new Song(type, name, time);
+        songs.push(song);
+    }
 
-//     whatToPrint === 'all'
-//             ? songs.forEach(x => console.log(x.name))
-//             : songs
-//                 .filter(x => x.type === whatToPrint)
-//                 .forEach(x => console.log(x.name))
-//         console.log();
-// }
+    whatToPrint === 'all'
+        ? songs.forEach(x => console.log(x.name))
+        : songs
+            .filter(x => x.type === whatToPrint)
+            .forEach(x => console.log(x.name))
+    console.log();
+}
 
-// solve([4,
-//     'favourite_DownTown_3:14',
-//     'listenLater_Andalouse_3:24',
-//     'favourite_In To The Night_3:58',
-//     'favourite_Live It Up_3:48',
-//     'listenLater'])
+solve([4,
+    'favourite_DownTown_3:14',
+    'listenLater_Andalouse_3:24',
+    'favourite_In To The Night_3:58',
+    'favourite_Live It Up_3:48',
+    'listenLater'])
 
-// solve([
-//     3,
-//     'favourite_DownTown_3:14',
-//     'favourite_Kiss_4:16',
-//     'favourite_Smooth Criminal_4:01',
-//     'favourite'
-// ]);
+solve([
+    3,
+    'favourite_DownTown_3:14',
+    'favourite_Kiss_4:16',
+    'favourite_Smooth Criminal_4:01',
+    'favourite'
+]);
 
-// solve([
-//     2,
-//     'like_Replay_3:15',
-//     'ban_Photoshop_3:48',
-//     'all'
-// ]);
+solve([
+    2,
+    'like_Replay_3:15',
+    'ban_Photoshop_3:48',
+    'all'
+]);
